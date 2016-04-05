@@ -10,10 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+/*HOME*/
+Route::get('/', 'HomeController@index');
+/*---------------------------------------------------*/
 
-Route::get('/', 'SusuController@index');
-Route::get('/login', 'SusuController@loginForm');
-Route::get('/dashboard', 'SusuController@dashboard');
 
-Route::post('/login', 'SusuController@login');
+/*POST USER*/
+Route::post('/', 'UserController@create');
+/*---------------------------------------------------*/
 
