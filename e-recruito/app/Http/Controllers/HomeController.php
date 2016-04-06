@@ -9,17 +9,16 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function signup()
 	{
-		$title='Welcome To Erecruito: Get Your Recruitment';
-		return view('home',['title'=>$title]);
+		$title='E-Recruito Signup';
+		return view('register.signup',['title'=>$title]);
 	}
 
 	public function login()
 	{
-		$title='Erecruito Login';
-
-		return view('login',['title'=>$title]);
+		$title='E-recruito Login';
+		return view('auth.login',['title'=>$title]);
 	}
 
 }

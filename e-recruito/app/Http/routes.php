@@ -11,13 +11,13 @@
 |
 */
 /*HOME*/
-Route::get('/', 'HomeController@index');
+Route::get('/signup', 'HomeController@signup');
 Route::get('/login', 'HomeController@login');
 /*---------------------------------------------------*/
 
 
 /*POST USER*/
-Route::post('/', 'UserController@create');
+Route::post('/register', 'UserController@create');
 Route::post('/login', 'UserController@authentication');
 /*---------------------------------------------------*/
 

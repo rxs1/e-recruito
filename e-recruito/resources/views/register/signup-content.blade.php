@@ -7,9 +7,7 @@
 
 			<p class="pull-right" style="margin: 3%"><b>Have an account click</b> <a href="{{url('/login')}}" class="btn btn-lg btn-primary">LOGIN</a></p>
 		</div>
-		<div class="col-md-12">
-			<hr>
-		</div>
+
 		<div class="col-md-6 col-md-offset-3">
 
 			<div class="panel panel-primary">
@@ -23,7 +21,12 @@
 
 
 				<div class="panel-body">
-					{!! Form::open(array('action'=>'UserController@create')) !!}
+					{!!Form::open(array('action'=>'UserController@create'))!!}
+
+					@foreach($errors->all() as $error)
+					<p class='alert alert-danger'>{{$error}}</p>
+					@endforeach
+					
 					<div class="form-group" >
 						{!! Form::label('name','Name', ['class'=>'col-md-4 control-label']) !!}
 

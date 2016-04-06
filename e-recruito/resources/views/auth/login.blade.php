@@ -4,8 +4,7 @@
 	@include('head')
 </head>
 <body>
-	@include('home-content')
+	@include('auth.login-content')
 	@include('footer')
-
 </body>
 </html>

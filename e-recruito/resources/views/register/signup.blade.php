@@ -4,7 +4,8 @@
 	@include('head')
 </head>
 <body>
-	@include('login-content')
+	@include('register.signup-content')
 	@include('footer')
+
 </body>
 </html>
