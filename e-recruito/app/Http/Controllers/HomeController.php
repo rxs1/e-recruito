@@ -15,4 +15,11 @@ class HomeController extends Controller {
 		return view('home',['title'=>$title]);
 	}
 
+	public function login()
+	{
+		$title='Erecruito Login';
+
+		return view('login',['title'=>$title]);
+	}
+
 }

@@ -34,13 +34,13 @@ class UserController extends Controller {
 
 		
 	}
-
 	/**
-	 * Store a newly created resource in storage.
+	 * Authentication 
 	 *
+	 * @param  int  $id
 	 * @return Response
 	 */
-	public function store()
+	public function authentication()
 	{
 		//
 	}
