@@ -9,6 +9,12 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
+	public function index()
+	{
+		$title='Join Us E-Recruito: Recruit Online';
+		return view('home',['title'=>$title]);
+	}
+
 	public function signup()
 	{
 		$title='E-Recruito Signup';
@@ -19,6 +25,16 @@ class HomeController extends Controller {
 	{
 		$title='E-recruito Login';
 		return view('auth.login',['title'=>$title]);
+	}
+
+	public function homeUser()
+	{
+		$title='Dashboard User';
+		if(session()->get('isLogin')){
+			return view('user.user',['title'=>$title]);
+		}else{
+			return redirect('/');	
+		}
 	}
 
 }

@@ -5,7 +5,7 @@
 		<div class="col-md-12">
 			<img  style="margin: 1%" src="{{asset('/public/assets/img/logo.png')}}">
 
-			<p class="pull-right" style="margin: 3%"><b>Have an account click</b> <a href="{{url('/login')}}" class="btn btn-lg btn-primary">LOGIN</a></p>
+			
 		</div>
 
 		<div class="col-md-6 col-md-offset-3">
@@ -61,12 +61,15 @@
 						{!! Form::password('repassword', array('class'=>'pass  form-control','placeholder'=>'re-type your password')) !!}
 
 					</div>
-					<div class="col-md-6 col-md-offset-4">
-						<br><br>
-						{!! Form::submit('SIGN UP', ['class'=>'btn btn-lg btn-primary']) !!}
+					<div class="col-md-6 col-md-offset-3">
+
+						{!! Form::submit('SIGN UP', ['class'=>'btn btn-primary form-control']) !!}
+						<center>
+							<p style="margin: 3%"><b>Already have account? login</b> <a href="{{url('/login')}}" >here</a></p>
+						</center>
 					</div>
 					{!! Form::close() !!}
-
+					
 				</div>
 			</div>
 		</div>

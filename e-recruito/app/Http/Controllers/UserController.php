@@ -15,7 +15,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		
 	}
 
 	public function create()
@@ -70,10 +70,10 @@ class UserController extends Controller {
 			$user = Users::where('email',$email)->first();
 			if($user){
 				if($user['role'] == 0 && $user['password'] == md5($input['password'])){
-					$request->session()->put('isLogin', 'user');
+					session()->put('isLogin', $user);
 					return Redirect::to('/user')->withInput();
 				}else if($user['password'] == md5($input['password'])){
-					$request->session()->put('isLogin', 'admin');
+					session()->put('isLogin', $user);
 					return Redirect::to('/admin')->withInput();
 				}else{
 					return Redirect::to('/login')->withInput()->with('error',1);
@@ -83,6 +83,11 @@ class UserController extends Controller {
 			}
 
 		}
+	}
+
+	public function logout(){
+		Session::forget('isLogin');
+		return Redirect::to('/')->withInput();
 	}
 
 
