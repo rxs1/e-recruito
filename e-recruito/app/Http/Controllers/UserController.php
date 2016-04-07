@@ -39,6 +39,7 @@ class UserController extends Controller {
 				'username'=>$input['username'],
 				'email'=>$input['email'],
 				'password'=>md5($input['password']),
+				'foto'=>'default.gif',
 				'role'=>0
 				]);
 
@@ -109,9 +110,44 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-		public function edit($id)
+		public function edit()
 		{
-		//
+			if(session()->get('isLogin')){
+				$user1 = session()->get('isLogin');
+				$Input = Input::all();
+				$rules = array(
+					'name'=>'required',
+					'username'=>'required',
+					'email'=>'required|email',
+					'foto'=>'max:1024px|mimes:jpeg,jpg,bmp,png',	
+					);
+				$validator = Validator::make($Input,$rules);
+				if($validator->fails()){
+					return Redirect::to('/user/my-profile/'.$user1['id'])->withInput()->withErrors($validator->errors());
+				}else{
+					
+					$user = Users::find($user1['id']);
+					$user->name = $Input['name'];
+					$user->username = $Input['username'];
+					$user->email = $Input['email'];
+
+					$image = Input::file('foto');
+					if(isset($Input['foto'])){
+						if($user->foto != 'default.gif'){
+							File::delete('public/assets/img/avatar/'.$user->foto);
+						}	
+						$filename  = rand(1111,9999).time() . '.' . $image->getClientOriginalExtension();
+						Input::file('foto')->move('public/assets/img/avatar/',$filename);
+						$user ->foto = $filename;
+					}
+
+					$user->save(); 
+					Session::put('isLogin', $user);
+					return Redirect::to('/user/my-profile')->withInput()->with('isMessage',1);
+				}
+			}else{
+				return Redirect::to('/')->withInput();
+			}
 		}
 
 		/**

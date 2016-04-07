@@ -16,9 +16,9 @@
 						<h2>
 							SIGN UP
 						</h2>
-					</div>
-				</center>
-
+						
+					</center>
+				</div>
 
 				<div class="panel-body">
 					{!!Form::open(array('action'=>'UserController@create'))!!}

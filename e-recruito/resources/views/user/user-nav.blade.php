@@ -22,7 +22,7 @@
 
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img style="margin-top: -5px"  src="{{url('/public/assets/img/avatar/'.$user['foto'])}}" height="30" width="30"> Hi {{$user['name']}}<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">My Profile</a></li>
+						<li><a href="{{url('user/my-profile')}}">My Profile</a></li>
 						<li><a href="#">Setting</a></li>
 						<li><a href="{{url('/logout')}}">Logout</a></li>
 						
