@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('register.signup-head')
 </head>
 <body>
 	@include('register.signup-content')
-	@include('footer')
-
 </body>
+<footer>
+	@include('footer')
+</footer>
 </html>
