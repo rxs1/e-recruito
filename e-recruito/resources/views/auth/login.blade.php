@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('auth.login-head')
 </head>
 <body>
 	@include('auth.login-content')
-	@include('footer')
 </body>
+<footer>
+	@include('footer')
+</footer>
 </html>
