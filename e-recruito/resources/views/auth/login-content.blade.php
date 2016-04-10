@@ -1,9 +1,7 @@
-
-
-<div class="container-fluid" style="background: url('{{asset('/public/assets/img/bg-login.png')}}');background-size:cover;padding-bottom: 11.5%">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<img  style="margin: 1%" src="{{asset('/public/assets/img/logo.png')}}">
+			<img class="header" src="{{asset('/public/assets/img/logo.png')}}">
 		</div>
 		
 		<div class="col-md-6 col-md-offset-3">
@@ -16,10 +14,10 @@
 
 
 
-			<div class="panel panel-primary">
+			<div class="panel panel-primary content">
 				<div class="panel-heading">
 					<center>
-						<h2>
+						<h2 id="greeting">
 							LOGIN HERE
 						</h2>
 
@@ -43,7 +41,7 @@
 					<div class="form-group">
 						{!! Form::label('email','Email', ['class'=>'col-md-4 control-label']) !!}
 
-						{!! Form::text('email',null,array('class'=>'form-control','placeholder'=>'type email')) !!}
+						{!! Form::text('email',null,array('class'=>'form-control','placeholder'=>'Enter your email')) !!}
 
 					</div>
 
@@ -51,7 +49,7 @@
 					<div class="form-group ">
 						{!! Form::label('password','Password', ['class'=>'col-md-4 control-label']) !!}
 
-						{!! Form::password('password', array('class'=>'pass form-control','placeholder'=>'your password')) !!}
+						{!! Form::password('password', array('class'=>'pass form-control','placeholder'=>'Enter your password')) !!}
 
 					</div>
 
