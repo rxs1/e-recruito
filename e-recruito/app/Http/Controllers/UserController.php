@@ -119,7 +119,7 @@ class UserController extends Controller {
 					'name'=>'required',
 					'username'=>'required',
 					'email'=>'required|email',
-					'foto'=>'max:1024px|mimes:jpeg,jpg,bmp,png',	
+					'foto'=>'mimes:jpeg,jpg,bmp,png',	
 					);
 				$validator = Validator::make($Input,$rules);
 				if($validator->fails()){
