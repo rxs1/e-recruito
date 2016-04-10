@@ -1,0 +1,28 @@
+html 
+{
+	background:#eeebe2 url("../../img/bg-login.png") no-repeat center center fixed;
+ 	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.container-fluid
+{
+	padding-bottom: 11%;
+}
+
+.header
+{
+	margin: 1%;
+}
+
+#greeting
+{
+	font-size: 350%;
+	text-shadow: 2px 2px #000;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 10px;
+	word-spacing: 12px;
+}
