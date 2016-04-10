@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('home-head')
 </head>
 <body>
 	@include('home-content')
-	@include('footer')
 </body>
+<footer>
+	@include('footer')
+</footer>
 </html>
