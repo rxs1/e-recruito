@@ -1,8 +1,8 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<img class="header" src="{{asset('/public/assets/img/logo.png')}}">
-			<p class="col-md-offset-10"><a href="{{url('/login')}}" class="btn btn-lg btn-primary mybut"> LOGIN</a></p>
+			<div class="col-md-6"><img class="header" src="{{asset('/public/assets/img/logo.png')}}"></div>
+			<div class="col-md-6"><div class="col-md-offset-10"><p class="logbut"><a href="{{url('/login')}}" class="btn btn-lg btn-primary mybut"> LOGIN</a></p></div></div>
 		</div>
 		
 		<div class="col-md-12 content">
