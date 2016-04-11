@@ -19,15 +19,6 @@ html
   	background-size: cover;
 }
 
-.container-fluid
-{
-  /*background-image:url('{{asset('/public/assets/img/bg-home1.png')}}');*/
-  /*background-image: url("../../img/bg-home1.png");*/
-  /*background-size:cover;*/
-  padding-bottom: 15%;
-}
-
-
 .header
 {
 	margin: 1%;
@@ -57,4 +48,8 @@ html
 {
 	background-color: #63aa9c;
 	border-color: #63aa9c;
+}
+
+.logbut {
+	margin: 10%;
 }
