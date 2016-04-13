@@ -79,4 +79,22 @@ class HomeController extends Controller {
 		}
 
 	}
+
+	/**
+	* menampilkan view home dari admin
+	*/
+	public function homeAdmin()
+	{
+		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');
+			if ($user['role'] == 0) {
+				$title='Dashboard User';
+				return view('user.user',['title'=>$title]);
+			}
+			$title='Dashboard Admin';
+			return view('admin.admin',['title'=>$title]);
+		}else{
+			return redirect('/');	
+		}
+	}
 }
