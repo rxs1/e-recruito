@@ -32,3 +32,6 @@ Route::post('/login', 'UserController@authentication');
 Route::post('/user/my-profile/{id}', 'UserController@edit');
 /*---------------------------------------------------*/
 
+/*---------------------------------------------------*/
+/*ADMIN THINGS*/
+Route::get('/admin', 'HomeController@homeAdmin');
