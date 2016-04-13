@@ -18,7 +18,7 @@
 									{!! Form::open(['class'=>'form-inline', 'method'=>'DELETE', 'route'=>['user.destroy', $user->id]]) !!}
 									<td>{{ $user->id }}</td>
 									<td>{{ $user->username }}</td>
-									<td><a href="{{ route('user.show', '$user->id') }}">{{ $user->name }}</a></td>
+									<td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
 									<td>{{ $user->password }}</td>
 									<td>{{ $user->foto }}</td>
 									<td>{{ $user->email }}</td>

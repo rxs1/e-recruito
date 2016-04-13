@@ -113,7 +113,19 @@ class UserController extends Controller {
 	 */
 		public function show($id)
 		{
-		//
+			if(session()->get('isLogin')){
+				$user = session()->get('isLogin');	
+				if ($user->role == 0) {
+					return redirect('/pengguna');
+				} else {
+					$specificUser = Users::find($id);
+					$title = 'Details of '.$specificUser->name;
+					return view('admin.users.show', compact('specificUser','title'));
+				}
+			}else{
+				$title='E-recruito Login';
+				return Redirect::to('/login')->with('title',$title);
+			}
 		}
 
 		/**
@@ -163,7 +175,7 @@ class UserController extends Controller {
 		}
 
 		public function edit() {
-			
+
 		}
 
 		/**
