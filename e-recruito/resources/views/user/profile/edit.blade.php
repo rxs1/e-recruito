@@ -22,7 +22,7 @@
 						</div>
 
 						<div class="panel-body">
-							{!!Form::open(array('action'=>'UserController@edit','files'=>true))!!}
+							{!!Form::open(array('action'=>'UserController@editProfile','files'=>true))!!}
 
 							@foreach($errors->all() as $error)
 							<p class='alert alert-danger'>{{$error}}</p>

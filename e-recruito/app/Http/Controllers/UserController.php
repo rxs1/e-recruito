@@ -26,7 +26,7 @@ class UserController extends Controller {
 			}
 		}else{
 			$title='E-recruito Login';
-			return view('auth.login',['title'=>$title]);
+			return Redirect::to('/login')->with('title',$title);
 		}
 	}
 
@@ -122,7 +122,7 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-		public function edit()
+		public function editProfile()
 		{
 			if(session()->get('isLogin')){
 				$user1 = session()->get('isLogin');
@@ -160,6 +160,10 @@ class UserController extends Controller {
 			}else{
 				return Redirect::to('/')->withInput();
 			}
+		}
+
+		public function edit() {
+			
 		}
 
 		/**
