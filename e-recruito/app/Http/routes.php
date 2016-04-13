@@ -35,3 +35,4 @@ Route::post('/pengguna/my-profile/{id}', 'UserController@edit');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
+Route::resource('user', 'UserController');

@@ -15,7 +15,19 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		
+		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');	
+			if ($user->role == 0) {
+				return redirect('/pengguna');
+			} else {
+				$users = Users::paginate(10);
+				$title = 'List Users';
+				return view('admin.users.index', compact('users','title'));
+			}
+		}else{
+			$title='E-recruito Login';
+			return view('auth.login',['title'=>$title]);
+		}
 	}
 
 	public function create()
