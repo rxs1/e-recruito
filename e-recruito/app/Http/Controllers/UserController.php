@@ -72,7 +72,7 @@ class UserController extends Controller {
 			if($user){
 				if($user['role'] == 0 && $user['password'] == md5($input['password'])){
 					session()->put('isLogin', $user);
-					return Redirect::to('/user')->withInput();
+					return Redirect::to('/pengguna')->withInput();
 				}else if($user['password'] == md5($input['password'])){
 					session()->put('isLogin', $user);
 					return Redirect::to('/admin')->withInput();
@@ -123,7 +123,7 @@ class UserController extends Controller {
 					);
 				$validator = Validator::make($Input,$rules);
 				if($validator->fails()){
-					return Redirect::to('/user/my-profile/'.$user1['id'])->withInput()->withErrors($validator->errors());
+					return Redirect::to('/pengguna/my-profile/'.$user1['id'])->withInput()->withErrors($validator->errors());
 				}else{
 					
 					$user = Users::find($user1['id']);
@@ -143,7 +143,7 @@ class UserController extends Controller {
 
 					$user->save(); 
 					Session::put('isLogin', $user);
-					return Redirect::to('/user/my-profile')->withInput()->with('isMessage',1);
+					return Redirect::to('/pengguna/my-profile')->withInput()->with('isMessage',1);
 				}
 			}else{
 				return Redirect::to('/')->withInput();

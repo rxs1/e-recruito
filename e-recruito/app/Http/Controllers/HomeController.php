@@ -17,7 +17,7 @@ class HomeController extends Controller {
 	public function signup()
 	{
 		if(session()->get('isLogin')){
-			return redirect('/user');	
+			return redirect('/pengguna');	
 
 		}else{
 			$title='E-Recruito Signup';
@@ -31,7 +31,7 @@ class HomeController extends Controller {
 	public function login()
 	{
 		if(session()->get('isLogin')){
-			return redirect('/user');	
+			return redirect('/pengguna');	
 			
 		}else{
 			$title='E-recruito Login';
