@@ -27,7 +27,7 @@ Route::get('/pengguna/my-profile/{id}', 'HomeController@eProfile');
 
 /*---------------------------------------------------*/
 /*POST USER*/
-Route::post('/register', 'UserController@create');
+Route::post('/register', 'UserController@register');
 Route::post('/login', 'UserController@authentication');
 Route::post('/pengguna/my-profile/{id}', 'UserController@editProfile');
 /*---------------------------------------------------*/
