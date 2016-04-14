@@ -32,6 +32,7 @@ class UserController extends Controller {
 
 	public function create()
 	{	
+
 		if (session()->get('isLogin')) {
 			$user = session()->get('isLogin');
 			if ($user->role == 0) {
@@ -50,6 +51,7 @@ class UserController extends Controller {
 				'repassword' =>'required|same:password'
 				);
 
+
 			$validator = Validator::make($input,$rules);
 			if($validator->fails()){
 				return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
@@ -67,6 +69,7 @@ class UserController extends Controller {
 			}
 		}		
 	}
+	
 	/**
 	 * Authentication 
 	 *
@@ -227,7 +230,7 @@ class UserController extends Controller {
 					$input['foto'] = 'default.gif';
 					Users::create( $input );
 					
-				 	return Redirect::route('user.index');
+					return Redirect::route('user.index');
 				}
 			}else{
 				$title='E-recruito Login';
