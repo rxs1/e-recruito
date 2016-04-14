@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="panel-body">
-					{!!Form::open(array('action'=>'UserController@create'))!!}
+					{!!Form::open(array('action'=>'UserController@register'))!!}
 
 					@foreach($errors->all() as $error)
 					<p class='alert alert-danger'>{{$error}}</p>
