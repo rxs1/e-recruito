@@ -51,7 +51,7 @@ class UserController extends Controller {
 		$rules = array(
 			'name' =>'required', 
 			'username' =>'required|unique:users,username', 
-			'email' =>'required|unique:users,email', 
+			'email' =>'required|email|unique:users,email', 
 			'password' =>'required|min:8', 
 			'repassword' =>'required|same:password'
 			);
@@ -133,6 +133,9 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$specificUser = Users::find($id);
+					if ($specificUser->role == 1) {
+						return Redirect::route('user.index');
+					}
 					$title = 'Details of '.$specificUser->name;
 					return view('admin.users.show', compact('specificUser','title'));
 				}
@@ -201,6 +204,12 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
 					$title = 'Edit data User';
 					return view('admin.users.edit', compact('user', 'title'));
 				}
@@ -225,7 +234,7 @@ class UserController extends Controller {
 					$rules = array(
 						'name' =>'required', 
 						'username' =>'required|unique:users,username', 
-						'email' =>'required|unique:users,email', 
+						'email' =>'required|email|unique:users,email', 
 						'password' =>'required|min:8',
 						);
 					$this->validate($request, $rules);
@@ -256,6 +265,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$input = array_except(Input::all(), '_method');
 					if ($input['password'] == "") {
 						$input['password'] = $user->password;
@@ -285,6 +301,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$user->delete();
 					return Redirect::route('user.index');
 				}
