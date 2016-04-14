@@ -15,7 +15,7 @@
 							<tr><th>ID</th><th>Username</th><th>Name</th><th>Password</th><th>Foto</th><th>Email</th><th>Role</th><th>Edit</th><th>Delete</th></tr>
 							@foreach($users as $user)
 								<tr>
-									{!! Form::open(['class'=>'form-inline', 'method'=>'DELETE', 'route'=>['user.destroy', $user->id]]) !!}
+									{!! Form::open(['class'=>'form-inline', 'method'=>'DELETE', 'onsubmit' => 'return confirm("Are you sure?")', 'route'=>['user.destroy', $user->id]]) !!}
 									<td>{{ $user->id }}</td>
 									<td>{{ $user->username }}</td>
 									<td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>

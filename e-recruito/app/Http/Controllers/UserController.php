@@ -188,9 +188,19 @@ class UserController extends Controller {
 		 * @return Response
 		 */
 		public function edit($id) {
-			$user = Users::find($id);
-			$title = 'Edit data User';
-			return view('admin.users.edit', compact('user', 'title'));
+			if(session()->get('isLogin')){
+				$pengguna = session()->get('isLogin');	
+				if ($pengguna->role == 0) {
+					return redirect('/pengguna');
+				} else {
+					$user = Users::find($id);
+					$title = 'Edit data User';
+					return view('admin.users.edit', compact('user', 'title'));
+				}
+			}else{
+				$title='E-recruito Login';
+				return Redirect::to('/login')->with('title',$title);
+			}
 		}
 
 		/**
@@ -200,19 +210,29 @@ class UserController extends Controller {
 		 */
 		public function store(Request $request)
 		{
-			$rules = array(
-				'name' =>'required', 
-				'username' =>'required|unique:users,username', 
-				'email' =>'required|unique:users,email', 
-				'password' =>'required|min:8',
-				);
-			$this->validate($request, $rules);
-			$input = Input::all();
-			$input['password'] = md5($input['password']);
-			$input['foto'] = 'default.gif';
-			Users::create( $input );
-			
-		 	return Redirect::route('user.index');
+			if(session()->get('isLogin')){
+				$pengguna = session()->get('isLogin');	
+				if ($pengguna->role == 0) {
+					return redirect('/pengguna');
+				} else {
+					$rules = array(
+						'name' =>'required', 
+						'username' =>'required|unique:users,username', 
+						'email' =>'required|unique:users,email', 
+						'password' =>'required|min:8',
+						);
+					$this->validate($request, $rules);
+					$input = Input::all();
+					$input['password'] = md5($input['password']);
+					$input['foto'] = 'default.gif';
+					Users::create( $input );
+					
+				 	return Redirect::route('user.index');
+				}
+			}else{
+				$title='E-recruito Login';
+				return Redirect::to('/login')->with('title',$title);
+			}		
 		}
 
 		/**
@@ -223,15 +243,25 @@ class UserController extends Controller {
 	 */
 		public function update($id)
 		{
-			$user = Users::find($id);
-			$input = array_except(Input::all(), '_method');
-			if ($input['password'] == "") {
-				$input['password'] = $user->password;
-			} else {
-				$input['password'] = md5($input['password']);
+			if(session()->get('isLogin')){
+				$pengguna = session()->get('isLogin');	
+				if ($pengguna->role == 0) {
+					return redirect('/pengguna');
+				} else {
+					$user = Users::find($id);
+					$input = array_except(Input::all(), '_method');
+					if ($input['password'] == "") {
+						$input['password'] = $user->password;
+					} else {
+						$input['password'] = md5($input['password']);
+					}
+					$user->update($input);
+					return Redirect::route('user.index');
+				}
+			}else{
+				$title='E-recruito Login';
+				return Redirect::to('/login')->with('title',$title);
 			}
-			$user->update($input);
-			return Redirect::route('user.index');
 		}
 
 		/**
@@ -252,7 +282,7 @@ class UserController extends Controller {
 					return Redirect::route('user.index');
 				}
 			} else {
-				return Redirect::to('/login');
+				return Redirect::to('/login')->with('title',$title);;
 			}
 		}
 
