@@ -20,15 +20,19 @@ Route::get('/logout', 'UserController@logout');
 /*---------------------------------------------------*/
 
 /*isLogin*/
-Route::get('/user', 'HomeController@homeUser');
-Route::get('/user/my-profile', 'HomeController@vProfile');
-Route::get('/user/my-profile/{id}', 'HomeController@eProfile');
+Route::get('/pengguna', 'HomeController@homeUser');
+Route::get('/pengguna/my-profile', 'HomeController@vProfile');
+Route::get('/pengguna/my-profile/{id}', 'HomeController@eProfile');
 
 
 /*---------------------------------------------------*/
 /*POST USER*/
 Route::post('/register', 'UserController@create');
 Route::post('/login', 'UserController@authentication');
-Route::post('/user/my-profile/{id}', 'UserController@edit');
+Route::post('/pengguna/my-profile/{id}', 'UserController@editProfile');
 /*---------------------------------------------------*/
 
+/*---------------------------------------------------*/
+/*ADMIN THINGS*/
+Route::get('/admin', 'HomeController@homeAdmin');
+Route::resource('user', 'UserController');

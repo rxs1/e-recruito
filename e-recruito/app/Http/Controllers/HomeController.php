@@ -17,7 +17,7 @@ class HomeController extends Controller {
 	public function signup()
 	{
 		if(session()->get('isLogin')){
-			return redirect('/user');	
+			return redirect('/pengguna');	
 
 		}else{
 			$title='E-Recruito Signup';
@@ -31,7 +31,7 @@ class HomeController extends Controller {
 	public function login()
 	{
 		if(session()->get('isLogin')){
-			return redirect('/user');	
+			return redirect('/pengguna');	
 			
 		}else{
 			$title='E-recruito Login';
@@ -78,5 +78,23 @@ class HomeController extends Controller {
 			return redirect('/');	
 		}
 
+	}
+
+	/**
+	* menampilkan view home dari admin
+	*/
+	public function homeAdmin()
+	{
+		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');
+			if ($user['role'] == 0) {
+				$title='Dashboard User';
+				return view('user.user',['title'=>$title]);
+			}
+			$title='Dashboard Admin';
+			return view('admin.admin',['title'=>$title]);
+		}else{
+			return redirect('/');	
+		}
 	}
 }
