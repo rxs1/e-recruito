@@ -20,7 +20,7 @@ class UserController extends Controller {
 			if ($user->role == 0) {
 				return redirect('/pengguna');
 			} else {
-				$users = Users::paginate(10);
+				$users = Users::where('role','=',0)->paginate(10);
 				$title = 'List Users';
 				return view('admin.users.index', compact('users','title'));
 			}
@@ -73,8 +73,36 @@ class UserController extends Controller {
 		} else {
 
 			return Redirect::to('/login');
-			
 		}		
+	}
+
+	public function register() {
+		$input = Input::all();
+		$rules = array(
+			'name' =>'required', 
+			'username' =>'required|unique:users,username', 
+			'email' =>'required|email|unique:users,email', 
+			'password' =>'required|min:8', 
+			'repassword' =>'required|same:password'
+			);
+
+
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()){
+			return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
+		}else{
+			$user = Users::create([
+				'name'=>$input['name'],
+				'username'=>$input['username'],
+				'email'=>$input['email'],
+				'password'=>md5($input['password']),
+				'foto'=>'default.gif',
+				'role'=>0
+				]);
+
+			return Redirect::to('/login')->with('message','1');
+		}
+		>>>>>>> origin/master
 	}
 	
 	/**
@@ -136,6 +164,12 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$specificUser = Users::find($id);
+					if (!$specificUser) {
+						return Redirect::route('user.index');
+					}
+					if ($specificUser->role == 1) {
+						return Redirect::route('user.index');
+					}
 					$title = 'Details of '.$specificUser->name;
 					return view('admin.users.show', compact('specificUser','title'));
 				}
@@ -204,6 +238,12 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
 					$title = 'Edit data User';
 					return view('admin.users.edit', compact('user', 'title'));
 				}
@@ -228,7 +268,7 @@ class UserController extends Controller {
 					$rules = array(
 						'name' =>'required', 
 						'username' =>'required|unique:users,username', 
-						'email' =>'required|unique:users,email', 
+						'email' =>'required|email|unique:users,email', 
 						'password' =>'required|min:8',
 						);
 					$this->validate($request, $rules);
@@ -259,6 +299,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$input = array_except(Input::all(), '_method');
 					if ($input['password'] == "") {
 						$input['password'] = $user->password;
@@ -288,6 +335,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$user->delete();
 					return Redirect::route('user.index');
 				}
