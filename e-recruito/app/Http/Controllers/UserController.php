@@ -32,33 +32,40 @@ class UserController extends Controller {
 
 	public function create()
 	{	
-		
-		$input = Input::all();
-		$rules = array(
-			'name' =>'required', 
-			'username' =>'required|unique:users,username', 
-			'email' =>'required|unique:users,email', 
-			'password' =>'required|min:8', 
-			'repassword' =>'required|same:password'
-			);
+		if (session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			if ($user->role == 0) {
+				return redirect('/pengguna');
+			} else {
+				$title = 'Tambah User';
+				return view('admin.users.create', ['title'=>$title]);
+			}
+		} else {
+			$input = Input::all();
+			$rules = array(
+				'name' =>'required', 
+				'username' =>'required|unique:users,username', 
+				'email' =>'required|unique:users,email', 
+				'password' =>'required|min:8', 
+				'repassword' =>'required|same:password'
+				);
 
-		$validator = Validator::make($input,$rules);
-		if($validator->fails()){
-			return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
-		}else{
-			$user = Users::create([
-				'name'=>$input['name'],
-				'username'=>$input['username'],
-				'email'=>$input['email'],
-				'password'=>md5($input['password']),
-				'foto'=>'default.gif',
-				'role'=>0
-				]);
+			$validator = Validator::make($input,$rules);
+			if($validator->fails()){
+				return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
+			}else{
+				$user = Users::create([
+					'name'=>$input['name'],
+					'username'=>$input['username'],
+					'email'=>$input['email'],
+					'password'=>md5($input['password']),
+					'foto'=>'default.gif',
+					'role'=>0
+					]);
 
-			return Redirect::to('/login')->with('message','1');
-		}
-
-		
+				return Redirect::to('/login')->with('message','1');
+			}
+		}		
 	}
 	/**
 	 * Authentication 
@@ -174,8 +181,38 @@ class UserController extends Controller {
 			}
 		}
 
-		public function edit() {
+		/**
+		 * Show the form for editing the specified resource.
+		 *
+		 * @param  int  $id
+		 * @return Response
+		 */
+		public function edit($id) {
+			$user = Users::find($id);
+			$title = 'Edit data User';
+			return view('admin.users.edit', compact('user', 'title'));
+		}
 
+		/**
+		 * Store a newly created resource in storage.
+		 *
+		 * @return Response
+		 */
+		public function store(Request $request)
+		{
+			$rules = array(
+				'name' =>'required', 
+				'username' =>'required|unique:users,username', 
+				'email' =>'required|unique:users,email', 
+				'password' =>'required|min:8',
+				);
+			$this->validate($request, $rules);
+			$input = Input::all();
+			$input['password'] = md5($input['password']);
+			$input['foto'] = 'default.gif';
+			Users::create( $input );
+			
+		 	return Redirect::route('user.index');
 		}
 
 		/**
@@ -186,7 +223,15 @@ class UserController extends Controller {
 	 */
 		public function update($id)
 		{
-		//
+			$user = Users::find($id);
+			$input = array_except(Input::all(), '_method');
+			if ($input['password'] == "") {
+				$input['password'] = $user->password;
+			} else {
+				$input['password'] = md5($input['password']);
+			}
+			$user->update($input);
+			return Redirect::route('user.index');
 		}
 
 		/**
@@ -197,7 +242,18 @@ class UserController extends Controller {
 	 */
 		public function destroy($id)
 		{
-		//
+			if (session()->get('isLogin')) {
+				$user = session()->get('isLogin');
+				if ($user->id == 0) {
+					return redirect('/pengguna');
+				} else {
+					$user = Users::find($id);
+					$user->delete();
+					return Redirect::route('user.index');
+				}
+			} else {
+				return Redirect::to('/login');
+			}
 		}
 
 	}

@@ -29,6 +29,7 @@
 								</tr>
 							@endforeach
 						</table>
+						<p> {!! link_to_route('user.create', 'Tambah User baru') !!}</p>
 						{!! $users->setPath('user') !!}
 					</div>
 				</div>
