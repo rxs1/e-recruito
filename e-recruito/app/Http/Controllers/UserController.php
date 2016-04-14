@@ -25,7 +25,7 @@ class UserController extends Controller {
 		$rules = array(
 			'name' =>'required', 
 			'username' =>'required|unique:users,username', 
-			'email' =>'required|unique:users,email', 
+			'email' =>'required|email|unique:users,email', 
 			'password' =>'required|min:8', 
 			'repassword' =>'required|same:password'
 			);
@@ -48,6 +48,7 @@ class UserController extends Controller {
 
 		
 	}
+	
 	/**
 	 * Authentication 
 	 *
