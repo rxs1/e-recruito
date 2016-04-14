@@ -133,6 +133,9 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$specificUser = Users::find($id);
+					if (!$specificUser) {
+						return Redirect::route('user.index');
+					}
 					if ($specificUser->role == 1) {
 						return Redirect::route('user.index');
 					}
