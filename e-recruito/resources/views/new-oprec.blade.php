@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('home-head')
+	@include('new-oprec-head')
 </head>
 <body>
 	@include('new-oprec-content')
