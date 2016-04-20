@@ -76,35 +76,6 @@ class UserController extends Controller {
 		}		
 	}
 
-	public function register() {
-		$input = Input::all();
-		$rules = array(
-			'name' =>'required', 
-			'username' =>'required|unique:users,username', 
-			'email' =>'required|email|unique:users,email', 
-			'password' =>'required|min:8', 
-			'repassword' =>'required|same:password'
-			);
-
-
-		$validator = Validator::make($input,$rules);
-		if($validator->fails()){
-			return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
-		}else{
-			$user = Users::create([
-				'name'=>$input['name'],
-				'username'=>$input['username'],
-				'email'=>$input['email'],
-				'password'=>md5($input['password']),
-				'foto'=>'default.gif',
-				'role'=>0
-				]);
-
-			return Redirect::to('/login')->with('message','1');
-		}
-		>>>>>>> origin/master
-	}
-	
 	/**
 	 * Authentication 
 	 *
