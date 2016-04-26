@@ -13,15 +13,14 @@ class CrateTableUser extends Migration {
 	public function up()
 	{
 		Schema::create('users', function (Blueprint $table) {
-		    $table->increments('id');
-		    $table->string('username', 225);
-		    $table->string('name', 225);
-		    $table->string('password', 225);
+			$table->increments('id');
+			$table->string('username', 225);
+			$table->string('name', 225);
+			$table->string('password', 225);
 			$table->text('foto');
 			$table->string('email', 225);
 			$table->integer('role');
-			$table->timestamps();
-					    
+			$table->timestamps();  
 		});
 	}
 
