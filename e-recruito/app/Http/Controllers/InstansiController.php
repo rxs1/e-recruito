@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Instansi;
-use Input, Redirect, File, Session,Validator;
+use Input, Redirect, File, Session,Validator, Response;
 use Illuminate\Http\Request;
 
 class InstansiController extends Controller {
@@ -15,7 +15,18 @@ class InstansiController extends Controller {
 	 */
 	public function index()
 	{
-		
+		$user = session()->get('isLogin');
+		if($user){
+			if($user['role'] == 0){
+				return Redirect::to('/pengguna')->withInput();
+			}else{
+				$instansiNotAccept = Instansi::where('status',0)->get();
+				$title = 'Instance Management';
+				return view('admin.instansi.index',['title'=>$title,'instansiNotAccept'=>$instansiNotAccept]);
+			}
+		}else{
+
+		}
 	}
 
 	/**
@@ -123,6 +134,27 @@ class InstansiController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+
+	public function getDownloadProve($file)
+	{
+		$file_download=url().'/file-server/file-prove-instansi/'.$file;
+		return Response::download($file_download);
+	}
+
+	public function acceptInstance($id)
+	{
+		$instansi = Instansi::find($id);
+		$instansi->status = 1;
+		$instansi->save();
+		return Redirect::to('/instansi')->with('message','Success Accept Instance');
+	}
+
+	public function ignoreInstance($id)
+	{
+		$file_download=url().'/file-server/file-prove-instansi/'.$file;
+		return Response::download($file_download);
 	}
 
 }

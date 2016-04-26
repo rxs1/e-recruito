@@ -39,3 +39,7 @@ Route::resource('instansi', 'InstansiController');
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
 Route::resource('user', 'UserController');
+
+Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDownloadProve');
+Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');
+Route::get('/instansi/status/ignore/{id}', 'InstansiController@ignoreInstance');
