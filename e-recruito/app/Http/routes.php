@@ -33,6 +33,9 @@ Route::post('/pengguna/my-profile/{id}', 'UserController@editProfile');
 /*---------------------------------------------------*/
 
 /*---------------------------------------------------*/
+/*UNTUK BUAT Instansi*/
+Route::resource('instansi', 'InstansiController');
+/*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
 Route::resource('user', 'UserController');
