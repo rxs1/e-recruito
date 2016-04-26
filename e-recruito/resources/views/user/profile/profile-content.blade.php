@@ -35,18 +35,7 @@
 							<hr>
 						</div>
 					</div>
-					<div class="col-md-10 col-md-offset-1">
-						<div class="col-md-2">
-							<p>Username</p>
-						</div>
-						<div class="col-md-1">:</div>
-						<div class="col-md-7">
-							<p>{{$user['username']}}</p>
-						</div>
-						<div class="col-md-12">
-							<hr>
-						</div>
-					</div>
+					
 					<div class="col-md-10 col-md-offset-1">
 						<div class="col-md-2">
 							<p>email</p>

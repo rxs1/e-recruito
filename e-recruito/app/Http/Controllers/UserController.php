@@ -35,7 +35,7 @@ class UserController extends Controller {
 		$input = Input::all();
 		$rules = array(
 			'name' =>'required', 
-			'username' =>'required|unique:users,username', 
+			
 			'email' =>'required|unique:users,email', 
 			'password' =>'required|min:8', 
 			'repassword' =>'required|same:password'
@@ -48,7 +48,6 @@ class UserController extends Controller {
 		}else{
 			$user = Users::create([
 				'name'=>$input['name'],
-				'username'=>$input['username'],
 				'email'=>$input['email'],
 				'password'=>md5($input['password']),
 				'foto'=>'default.gif',
@@ -163,7 +162,6 @@ class UserController extends Controller {
 				$Input = Input::all();
 				$rules = array(
 					'name'=>'required',
-					'username'=>'required',
 					'email'=>'required|email',
 					'foto'=>'mimes:jpeg,jpg,bmp,png',	
 					);
@@ -174,7 +172,7 @@ class UserController extends Controller {
 					
 					$user = Users::find($user1['id']);
 					$user->name = $Input['name'];
-					$user->username = $Input['username'];
+
 					$user->email = $Input['email'];
 
 					$image = Input::file('foto');
@@ -237,8 +235,7 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$rules = array(
-						'name' =>'required', 
-						'username' =>'required|unique:users,username', 
+						'name' =>'required', 						
 						'email' =>'required|email|unique:users,email', 
 						'password' =>'required|min:8',
 						);
