@@ -4,7 +4,7 @@
 	@include('head')
 </head>
 <body>
-	@include ('admin.admin-nav')
+	@include ('nav')
 	<div class="containter-fluid">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">

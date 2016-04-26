@@ -4,7 +4,7 @@
 	@include('head')
 </head>
 <body>
-	@include('user.user-nav')
+	@include('nav')
 	<div class="container" style="margin-top: 5%">
 		<div class="col-md-12">
 			<h2>{{$title}}</h2>

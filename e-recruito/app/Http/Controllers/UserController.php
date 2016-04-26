@@ -194,7 +194,13 @@ class UserController extends Controller {
 
 					$user->save(); 
 					Session::put('isLogin', $user);
-					return Redirect::to('/pengguna/my-profile')->withInput()->with('isMessage',1);
+					$loginuser = session()->get('isLogin');
+					if($loginuser['id'] == 0){
+						return Redirect::to('/pengguna/my-profile')->withInput()->with('isMessage',1);
+					}else{
+						return Redirect::to('/user')->withInput()->with('isMessage',1);
+					}
+					
 				}
 			}else{
 				return Redirect::to('/')->withInput();

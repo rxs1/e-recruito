@@ -5,7 +5,7 @@
 	@include('head')
 </head>
 <body>
-	@include('user.user-nav')
+	@include('nav')
 	<div class="container-fluid">
 		<div class="container">
 			<div class="row">
