@@ -163,6 +163,9 @@ class UserController extends Controller {
 				$rules = array(
 					'name'=>'required',
 					'email'=>'required|email',
+					'region'=>'required',
+					'motto'=>'required',
+					'profesi'=>'required',
 					'foto'=>'mimes:jpeg,jpg,bmp,png',	
 					);
 				$validator = Validator::make($Input,$rules);
@@ -172,9 +175,13 @@ class UserController extends Controller {
 					
 					$user = Users::find($user1['id']);
 					$user->name = $Input['name'];
-
 					$user->email = $Input['email'];
-
+					$user->motto = $Input['motto'];
+					if($Input['birthdate']){
+						$user->birthdate = $Input['birthdate'];
+					}
+					$user->profesi = $Input['profesi'];
+					$user->region = $Input['region'];
 					$image = Input::file('foto');
 					if(isset($Input['foto'])){
 						if($user->foto != 'default.gif'){
