@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class OprecController extends Controller {
+class BidangController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -28,23 +28,25 @@ class OprecController extends Controller {
 	}
 
 	/**
-	 * Make oprec for admin of instances
+	 * create bidang by admin of instances
 	 */
-	public function createOprec($idinstansi) 
+	public function createBidang($idoprec) 
 	{
 		$input = Input::all();
-		$input->idinstansi = $idinstansi;
-		$input->statuspublis = 0;
+		$input->idoprec = $idoprec;
 		$rules = [
 			'name' => 'required',
-			'idinstansi' => 'exists:instansi,id'
+			'cp' => 'required',
+			'deskripsi' => 'required',
+			'deadline' => 'date|required',
+			'idoprec' => 'required|exists:oprec,id'
 		];
 
 		$validator = Validator::make($input,$rules);
 		if($validator->fails()){
-			return Redirect::to('/oprec/createOprec')->withInput()->withErrors($validator->errors());
+			return Redirect::to('/oprec/bidang/createBidang')->withInput()->withErrors($validator->errors());
 		}else{
-			Oprec::create($input);
+			Bidang::create($input);
 			return Redirect::to('/pengguna');
 		}
 	}
