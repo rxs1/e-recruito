@@ -35,13 +35,6 @@
 					</div>
 
 					<div class="form-group">
-						{!! Form::label('username','Username', ['class'=>'col-md-4 control-label']) !!}
-
-						{!! Form::text('username',null,array('class'=>'form-control','placeholder'=>'Enter your username (without space)')) !!}
-
-					</div>
-
-					<div class="form-group">
 						{!! Form::label('email','Email', ['class'=>'col-md-4 control-label']) !!}
 						{!! Form::text('email',null,array('class'=>'email form-control','placeholder'=>'Enter your email, example: xyz@example.com')) !!}
 
