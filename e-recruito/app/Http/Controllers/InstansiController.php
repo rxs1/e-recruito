@@ -21,11 +21,14 @@ class InstansiController extends Controller {
 				return Redirect::to('/pengguna')->withInput();
 			}else{
 				$instansiNotAccept = Instansi::where('status',0)->get();
+				$instansiIgnored = Instansi::where('status',-1)->get();
+				$instansiAccept = Instansi::where('status',1)->get();
 				$title = 'Instance Management';
-				return view('admin.instansi.index',['title'=>$title,'instansiNotAccept'=>$instansiNotAccept]);
+				return view('admin.instansi.index',['title'=>$title,'instansiNotAccept'=>$instansiNotAccept,'instansiIgnored'=>$instansiIgnored,'instansiAccept'=>$instansiAccept]);
 			}
 		}else{
-
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
 		}
 	}
 
@@ -133,7 +136,19 @@ class InstansiController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		
+		if (session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			if ($user->id == 0) {
+				return redirect('/pengguna');
+			} else {
+				$instansi = Instansi::find($id);
+				$instansi->delete();
+				return Redirect::route('instansi.index');
+			}
+		} else {
+			return Redirect::to('/login')->with('title',$title);;
+		}
 	}
 
 
@@ -153,8 +168,10 @@ class InstansiController extends Controller {
 
 	public function ignoreInstance($id)
 	{
-		$file_download=url().'/file-server/file-prove-instansi/'.$file;
-		return Response::download($file_download);
+		$instansi = Instansi::find($id);
+		$instansi->status = -1;
+		$instansi->save();
+		return Redirect::to('/instansi')->with('message','Success Ignore Instance');
 	}
 
 }
