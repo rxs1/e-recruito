@@ -226,6 +226,7 @@ class UserController extends Controller {
 					if ($user->role == 1) {
 						return Redirect::route('user.index');
 					}
+					
 					$title = 'Edit data User';
 					return view('admin.users.edit', compact('user', 'title'));
 				}
@@ -307,7 +308,7 @@ class UserController extends Controller {
 						'profesi'=>'required',
 						'foto'=>'mimes:jpeg,jpg,bmp,png',
 						'birthdate'=>'required'	
-					);
+						);
 					$validator = Validator::make($input,$rules);
 					if($validator->fails()){
 						$title = 'Edit data User';

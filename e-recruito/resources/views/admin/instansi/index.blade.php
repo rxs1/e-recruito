@@ -93,9 +93,9 @@
 							<div class="col-md-12" style="margin-bottom: ">
 								
 								<div class="col-md-12">
-									{!! Form::open(array('route' => array('instansi.destroy', $list->id), 'method' => 'delete')) !!}
-									<button onclick="return confirm('Are you sure to delete instance ?')" class="btn btn-danger" type="submit" >Delete Instance</button>
-									{!! Form::close() !!}
+
+									<a href="{{url().'/pengguna/instansi/delete/'.$list['id']}}"><button onclick="return confirm('Are you sure to delete instance ?')" class="btn btn-danger" type="submit" >Delete Instance</button></a>
+									
 									
 								</div>
 							</div>

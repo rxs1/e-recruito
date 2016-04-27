@@ -9,6 +9,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$title='Join Us E-Recruito: Recruit Online';
+		
 		return view('home',['title'=>$title]);
 	}
 	/**

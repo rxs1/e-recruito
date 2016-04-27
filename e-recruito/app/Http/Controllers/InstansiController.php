@@ -32,6 +32,18 @@ class InstansiController extends Controller {
 		}
 	}
 
+	public function viewMyInstance(){
+		if(session()->get('isLogin')){
+			$title = 'My Instance';
+			$user = session()->get('isLogin');
+			$myinstansi = Instansi::where('iduser',$user['id'])->get();
+			return view('user.instansi.viewmyinstance',['title'=>$title,'myinstansi'=>$myinstansi]); 
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -148,6 +160,75 @@ class InstansiController extends Controller {
 			}
 		} else {
 			return Redirect::to('/login')->with('title',$title);;
+		}
+	}
+
+	public function deleteInstance($id)
+	{
+		
+		if (session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			$instansi = Instansi::find($id);
+			if ($instansi->status == -1) {
+				$instansi->delete();
+				return Redirect::to('/pengguna/instansi')->withInput();
+				
+			} else {
+				return redirect('/pengguna/instansi');
+			}
+		} else {
+			return Redirect::to('/login')->with('title',$title);;
+		}
+	}
+
+	public function updateInstance()
+	{
+		$input = Input::all();
+		if (session()->get('isLogin')) {
+
+			$rules = array(
+				'foto' =>'mimes:jpeg,jpg,png', 
+				'email' =>'required|email', 
+				'deskripsi' =>'required', 
+				);
+			
+			$validator = Validator::make($input,$rules);
+			if($validator->fails()){
+				return Redirect::to('pengguna/instansi/update/'.$input['id'])->withInput()->withErrors($validator->errors());
+			}else{
+				
+				$user = session()->get('isLogin');
+				$instansi = Instansi::find($input['id']);
+				$instansi->email = $input['email'];
+				$instansi->deskripsi = $input['deskripsi'];
+				if(isset($Input['foto'])){
+					$image = Input::file('foto');
+					File::delete('public/assets/img/logo-instansi/'.$instansi->foto);
+					$filename  = rand(1111,9999).time() . '.' . $image->getClientOriginalExtension();
+					Input::file('foto')->move('public/assets/img/logo-instansi/',$filename);
+					$instansi->foto = $filename;
+				}
+
+				$instansi->save();
+				return Redirect::to('/pengguna/instansi')->with(['message'=>'Update Success ','name'=>$instansi->name]);
+			}
+
+		} else {
+			return Redirect::to('/login')->with('title',$title);;
+		}
+	}
+
+	public function editInstance($id)
+	{
+		
+		if(session()->get('isLogin')){
+			$instansi = Instansi::find($id);
+			$title = 'Edit Instansi '. $instansi['name'];
+
+			return view('user.instansi.edit',['title'=>$title,'instansi'=>$instansi]); 
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
 		}
 	}
 
