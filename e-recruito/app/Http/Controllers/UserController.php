@@ -293,8 +293,39 @@ class UserController extends Controller {
 					} else {
 						$input['password'] = md5($input['password']);
 					}
-					$user->update($input);
-					return Redirect::route('user.index');
+
+					if (!$input['birthdate']) {
+						$input['birthdate'] = $user->birthdate;
+					}
+
+					$rules = array(
+						'name'=>'required',
+						'email'=>'required|email',
+						'password'=>'required',
+						'region'=>'required',
+						'motto'=>'required',
+						'profesi'=>'required',
+						'foto'=>'mimes:jpeg,jpg,bmp,png',
+						'birthdate'=>'required'	
+					);
+					$validator = Validator::make($input,$rules);
+					if($validator->fails()){
+						$title = 'Edit data User';
+						return view('admin.users.edit', compact('user', 'title'))->withErrors($validator->errors());
+						//return Redirect::to('/pengguna/my-profile/'.$user1['id'])->withInput()->withErrors($validator->errors());
+					} else {
+						$image = Input::file('foto');
+						if(isset($input['foto'])){
+							if($user->foto != 'default.gif'){
+								File::delete('public/assets/img/avatar/'.$user->foto);
+							}	
+							$filename  = rand(1111,9999).time() . '.' . $image->getClientOriginalExtension();
+							Input::file('foto')->move('public/assets/img/avatar/',$filename);
+							$input['foto'] = $filename;
+						}
+						$user->update($input);
+						return Redirect::route('user.index');
+					}
 				}
 			}else{
 				$title='E-recruito Login';

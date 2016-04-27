@@ -17,12 +17,6 @@
 						@endforeach
 
 						<div class="form-group" >
-							{!! Form::label('username','Username', ['class'=>'col-md-4 control-label']) !!}
-
-							{!! Form::text('username',null,array('class'=>' form-control', 'placeholder'=>'enter the username')) !!}
-						</div>
-
-						<div class="form-group" >
 							{!! Form::label('name','Full Name', ['class'=>'col-md-4 control-label']) !!}
 
 							{!! Form::text('name',null,array('class'=>' form-control', 'placeholder'=>'Enter the name')) !!}
