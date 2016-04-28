@@ -297,7 +297,7 @@
 			<PageBreakRight>1</PageBreakRight>
 			<PageBreakBottom>1</PageBreakBottom>
 			<ScrollX>593</ScrollX>
-			<ScrollY>819</ScrollY>
+			<ScrollY>559</ScrollY>
 			<BackColor>#FFFFFFFF</BackColor>
 			<GridColor>#FFB4B4B4</GridColor>
 			<GridSpace>1</GridSpace>
@@ -317,7 +317,7 @@
 			<HpPrecistion>0.0</HpPrecistion>
 			<HpDispMode>0</HpDispMode>
 		</Layout>
-		<Layer Type="Layer" Name="Background" Background="TRUE" ID="10006">
+		<Layer Type="Layer" NameU="Background" Name="Background" Background="TRUE" ID="10006">
 			<Shape Type="Rectangle" NameU="Rectangle" Name="Rectangle" ID="10419">
 				<Transform>
 					<Width F="Page.Width">1188</Width>
@@ -333,9 +333,7 @@
 				<Misc>
 					<ObjectType>10</ObjectType>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -384,7 +382,7 @@
 				</Geometries>
 			</Shape>
 		</Layer>
-		<Layer Type="Layer" Name="layer-1" ID="10007">
+		<Layer Type="Layer" NameU="layer-1" Name="layer-1" ID="10007">
 			<Shape Type="Shape" ID="10224">
 				<Transform>
 					<Width>100</Width>
@@ -420,9 +418,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -577,9 +573,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -734,9 +728,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -891,9 +883,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1026,9 +1016,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -1146,9 +1134,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1303,9 +1289,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1460,9 +1444,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1617,9 +1599,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1774,9 +1754,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -1931,9 +1909,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2088,9 +2064,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2245,9 +2219,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2402,9 +2374,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2559,9 +2529,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2617,7 +2585,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 foto:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="149" Width="88" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 foto:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="469" Y="149" Width="87" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -2716,9 +2684,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -2774,164 +2740,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="559" Y="149" Width="100" Height="16">
-						<TextFormat>
-							<TextFormatMask>0</TextFormatMask>
-							<FontFamily>Arial</FontFamily>
-							<FontWeight>400</FontWeight>
-							<FontHeight>10</FontHeight>
-							<FontItalic>FALSE</FontItalic>
-							<FontUnderline>FALSE</FontUnderline>
-							<FontStrikeout>FALSE</FontStrikeout>
-							<AlignHorizontal>Center</AlignHorizontal>
-							<AlignVertical>Middle</AlignVertical>
-							<Color Value="#FF000000"/>
-							<FontOffset>0</FontOffset>
-							<FontBackColor>#FFFEFD</FontBackColor>
-							<FontBullet>0</FontBullet>
-							<LeftOffset>0</LeftOffset>
-							<StartIndent>0</StartIndent>
-							<RightIndent>0</RightIndent>
-							<LineSpace>20</LineSpace>
-							<SpaceBefore>0</SpaceBefore>
-							<SpaceAfter>0</SpaceAfter>
-						</TextFormat>
-						<Transform>
-							<Width F="HYP(Width*1,Height*0)">99.2501</Width>
-							<Height F="HYP(Width*0,Height*1)">26</Height>
-							<Angle>0</Angle>
-							<GPinX F="Width*0.5" R="0.5" M="1">49.625</GPinX>
-							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
-							<LocPinX F="Text.T1.Width*0.5">49.625</LocPinX>
-							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
-						</Transform>
-						<TxtField U="STR"/>
-					</Text>
-				</Texts>
-				<Geometries>
-					<Geometry>
-						<NoFill>0</NoFill>
-						<NoLine>0</NoLine>
-						<Closed>1</Closed>
-						<NoShow>0</NoShow>
-						<NoSnap>1</NoSnap>
-						<MoveTo JointType="0">
-							<X F="Width">99.2501</X>
-							<Y F="Height">26</Y>
-						</MoveTo>
-						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">99.2501</X>
-							<Y F="Height*0" R="0" M="2">0</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*0" R="0" M="1">0</X>
-							<Y F="Height*0" R="0" M="2">0</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*0" R="0" M="1">0</X>
-							<Y F="Height*1" R="1" M="2">26</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">99.2501</X>
-							<Y F="Height*1" R="1" M="2">26</Y>
-						</LineTo>
-					</Geometry>
-				</Geometries>
-			</Shape>
-			<Shape Type="Shape" ID="10800">
-				<Transform>
-					<Width>99.2501</Width>
-					<Height>26</Height>
-					<Angle>0</Angle>
-					<GPinX>710.749</GPinX>
-					<GPinY>157.4</GPinY>
-					<LocPinX F="Width*0.5" R="0.5" M="1">49.625</LocPinX>
-					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
-					<FlipX>0</FlipX>
-					<FlipY>0</FlipY>
-				</Transform>
-				<CPoints>
-					<CPoint Name="Pt1" ID="1" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">49.625</X>
-						<Y F="Height*1" R="1" M="2">26</Y>
-					</CPoint>
-					<CPoint Name="Pt2" ID="2" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">49.625</X>
-						<Y F="Height*0" R="0" M="2">0</Y>
-					</CPoint>
-					<CPoint Name="Pt3" ID="3" Type="0">
-						<X F="Width*1" R="1" M="1">99.2501</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-					<CPoint Name="Pt4" ID="4" Type="0">
-						<X F="Width*0" R="0" M="1">0</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-					<CPoint Name="Pt5" ID="5" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">49.625</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-				</CPoints>
-				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
-				<Properties>
-					<Prop Name="Cost" ID="1">
-						<Type>4</Type>
-						<Format U="STR">0.00 USD</Format>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Cost</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-					<Prop Name="Duration" ID="2">
-						<Type>3</Type>
-						<Format U="STR">[h]:[mm]</Format>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Duration</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-					<Prop Name="Resources" ID="3">
-						<Type>0</Type>
-						<Format U="STR"/>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Resources</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-				</Properties>
-				<ShapeFormat QuickMask="0">
-					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
-						<Stop>
-							<Color Value="#FFEDF0F7"/>
-							<Offset>0</Offset>
-						</Stop>
-						<Stop>
-							<Color Value="#FFA6BED0"/>
-							<Offset>1</Offset>
-						</Stop>
-					</FillFormat>
-					<LineFormat>
-						<LineWeight>1</LineWeight>
-						<LineCap>0</LineCap>
-						<LinePattern>1</LinePattern>
-						<Rounding>0</Rounding>
-						<BeginArrowID>0</BeginArrowID>
-						<BeginArrowSize>4</BeginArrowSize>
-						<EndArrowID>0</EndArrowID>
-						<EndArrowSize>4</EndArrowSize>
-						<LineFill Type="Solid">
-							<Color Value="#FF3C5C74"/>
-						</LineFill>
-					</LineFormat>
-					<EffectFormat>
-						<Shadow Mode="0"/>
-					</EffectFormat>
-				</ShapeFormat>
-				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 bidang:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="661" Y="149" Width="99" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="560" Y="149" Width="99" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -3008,9 +2817,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -3114,9 +2921,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -3323,9 +3128,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -3480,9 +3283,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -3637,9 +3438,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -3772,9 +3571,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -3878,9 +3675,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -4087,9 +3882,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -4244,9 +4037,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -4401,9 +4192,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -4558,9 +4347,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -4616,7 +4403,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 cp:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="322" Width="88" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 cp:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="469" Y="322" Width="87" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -4715,9 +4502,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -4773,7 +4558,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="559" Y="322" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="560" Y="322" Width="99" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -4850,9 +4635,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -4956,9 +4739,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -5165,9 +4946,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -5322,9 +5101,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -5479,9 +5256,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -5636,9 +5411,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -5694,7 +5467,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 tipe:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="468.25" Y="409" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 tipe:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="409" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -5793,9 +5566,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -5851,7 +5622,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="572" Y="409" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="573" Y="409" Width="99" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -5928,9 +5699,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -6034,9 +5803,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -6243,9 +6010,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -6400,9 +6165,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -6557,9 +6320,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -6615,7 +6376,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 tugas:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="368.501" Y="495" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 tugas:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="369" Y="495" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -6692,9 +6453,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -6798,9 +6557,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -6977,7 +6734,7 @@
 					<Width>99.2501</Width>
 					<Height>26</Height>
 					<Angle>0</Angle>
-					<GPinX>814.374</GPinX>
+					<GPinX>710.749</GPinX>
 					<GPinY>157.4</GPinY>
 					<LocPinX F="Width*0.5" R="0.5" M="1">49.625</LocPinX>
 					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
@@ -7007,9 +6764,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -7065,7 +6820,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 status:int\par&#x0D;&#x0A;}" ExtendMode="0" X="765" Y="149" Width="99" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 status:int\par&#x0D;&#x0A;}" ExtendMode="0" X="661" Y="149" Width="99" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -7164,9 +6919,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -7321,9 +7074,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -7478,9 +7229,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -7536,7 +7285,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 date:date\par&#x0D;&#x0A;}" ExtendMode="0" X="468.25" Y="568" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 date:date\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="568" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -7613,9 +7362,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -7719,9 +7466,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -7928,9 +7673,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -8085,9 +7828,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -8242,9 +7983,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -8377,9 +8116,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -8497,9 +8234,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -8555,7 +8290,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 status:int\par&#x0D;&#x0A;}" ExtendMode="0" X="571.751" Y="636" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 status:int\par&#x0D;&#x0A;}" ExtendMode="0" X="572" Y="636" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -8654,9 +8389,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -8712,7 +8445,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 wawancaradate:date\par&#x0D;&#x0A;}" ExtendMode="0" X="681.375" Y="636" Width="125" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 wawancaradate:date\par&#x0D;&#x0A;}" ExtendMode="0" X="681" Y="636" Width="126" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -8797,9 +8530,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -8992,9 +8723,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -9201,9 +8930,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -9358,9 +9085,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -9515,9 +9240,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -9650,9 +9373,7 @@
 					<FlipY>0</FlipY>
 				</Transform>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat/>
 					<LineFormat>
@@ -9770,9 +9491,7 @@
 					</CPoint>
 				</CPoints>
 				<Misc/>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<Properties>
 					<Prop Name="Cost" ID="1">
 						<Type>4</Type>
@@ -9828,7 +9547,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 komentar:text\par&#x0D;&#x0A;}" ExtendMode="0" X="577.75" Y="720" Width="125" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 komentar:text\par&#x0D;&#x0A;}" ExtendMode="0" X="577" Y="720" Width="126" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -9913,9 +9632,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -10104,9 +9821,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -10295,9 +10010,7 @@
 				<Misc>
 					<Adapte>4</Adapte>
 				</Misc>
-				<Events>
-					<EventDrop>0</EventDrop>
-				</Events>
+				<Events/>
 				<ShapeFormat QuickMask="0">
 					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
 						<Stop>
@@ -10699,7 +10412,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="468.25" Y="636.499" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="636" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -10854,7 +10567,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="365.249" Y="568" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="365" Y="568" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -11009,7 +10722,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="364.501" Y="409" Width="100" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="365" Y="409" Width="100" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -11250,7 +10963,7 @@
 		</Connects>
 	</Page>
 	<Preview>
-		<![CDATA[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]]>
+		<![CDATA[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]]>
 	</Preview>
 </Document>
 
