@@ -62,7 +62,7 @@
 				<a class="btn btn-primary form-control">View All Oprec</a>
 				<br>
 				<br>
-				<a class="btn btn-primary form-control"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Oprec</a>
+				<a href="{{url().'/pengguna/instansi/'.$list->id.'/make/oprec'}}" class="btn btn-primary form-control"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Oprec</a>
 				@endif
 			</div>
 

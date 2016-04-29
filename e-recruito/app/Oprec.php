@@ -5,6 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 class Oprec extends Model {
 
 	protected $table = 'oprec';
-	protected $fillable = ['idinstansi','name','statuspublis'];
+	protected $fillable = ['idinstansi','name','statuspublis','max-field-person'];
 
 }

@@ -28,22 +28,30 @@ Route::get('/pengguna/instansi', 'InstansiController@viewMyInstance');
 Route::get('/pengguna/instansi/delete/{id}', 'InstansiController@deleteInstance');
 Route::get('/pengguna/instansi/update/{id}', 'InstansiController@editInstance');
 Route::post('/pengguna/instansi/update/{id}', 'InstansiController@updateInstance');
+/*bidang*/
+/*oprec*/
+Route::get('/pengguna/instansi/{id}/make/oprec', 'OprecController@create');
+
 
 /*---------------------------------------------------*/
 /*POST USER*/
 Route::post('/register', 'UserController@register');
 Route::post('/login', 'UserController@authentication');
 Route::post('/pengguna/my-profile/{id}', 'UserController@editProfile');
-/*POST Instansi*/
+
 /*---------------------------------------------------*/
 
 /*---------------------------------------------------*/
-/*UNTUK BUAT Instansi*/
+/*RESOURCE*/
 Route::resource('instansi', 'InstansiController');
+Route::resource('user', 'UserController');
+Route::resource('oprec', 'OprecController');
+Route::resource('tugas', 'TugasController');
+Route::resource('bidang', 'BidangController');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
-Route::resource('user', 'UserController');
+
 
 Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDownloadProve');
 Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');
