@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Instansi;
+use App\Oprec;
 use Input, Redirect, File, Session,Validator, Response;	
 class OprecController extends Controller {
 
@@ -42,9 +43,23 @@ class OprecController extends Controller {
 	public function store()
 	{
 		$input = Input::all();
-		$instansi = Instansi::find($input['idinstansi']);
-		$title ='All Oprec '.$instansi->name;
-		return view('user.instansi.oprec.viewalloprec',['title'=>$title]);
+		$input['statuspublis'] = 0;
+		$rules = [
+			'name' => 'required',
+			'max-field-person' => 'required',
+			'deadline' => 'required|after:yesterday',
+			'idinstansi' => 'exists:instansi,id'
+		];
+
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()){
+			return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/make/oprec')->withInput()->withErrors($validator->errors());
+		}else{
+			Oprec::create($input);
+			$instansi = Instansi::find($input['idinstansi']);
+			$title ='All Oprec '.$instansi->name;
+			return view('user.instansi.oprec.viewalloprec',['title'=>$title]);
+		}
 	}
 
 	/**
