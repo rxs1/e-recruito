@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class BidangControllerr extends Controller {
+class PendaftarOprecController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

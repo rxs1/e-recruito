@@ -59,7 +59,7 @@
 
 			<div class="col-md-3">
 				@if($list['status'] == 1)
-				<a class="btn btn-primary form-control">View All Oprec</a>
+				<a href="{{url('/pengguna/instansi/'.$list->id.'/alloprec')}}" class="btn btn-primary form-control">View All Oprec</a>
 				<br>
 				<br>
 				<a href="{{url().'/pengguna/instansi/'.$list->id.'/make/oprec'}}" class="btn btn-primary form-control"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Oprec</a>

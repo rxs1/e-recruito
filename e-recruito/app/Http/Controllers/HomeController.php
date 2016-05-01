@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Oprec;
+use Input, Redirect, File, Session,Validator, Response;	
 class HomeController extends Controller {
 
 
@@ -48,7 +50,8 @@ class HomeController extends Controller {
 	{
 		$title='Dashboard User';
 		if(session()->get('isLogin')){
-			return view('user.user',['title'=>$title]);
+			$allOprec = Oprec::where('statuspublis',1)->get();
+			return view('user.user',['title'=>$title,'allOprec'=>$allOprec]);
 		}else{
 			return redirect('/');	
 		}

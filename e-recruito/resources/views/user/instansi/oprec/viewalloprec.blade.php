@@ -9,71 +9,114 @@
 		<h2>{{$title}}</h2>
 		<hr>
 		<div class="row">
-			<div class="col-md-12">
-				<h3>Name Oprec <a href="##" class="text-warning"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> EDIT</a></h3>
+			@if(($errors->all()))
+			<h5 class="alert alert-danger">error from {{ session()->get('message') }}</h5>
+			@foreach($errors->all() as $error) 
+			<p class='alert alert-danger'>{{$error}}</p>
+			@endforeach
+			@endif
+			@if(session()->get('message') == 'Published')
+			<h5 class="alert alert-success">{{ session()->get('message') }}</h5>
+			@endif
+			@if(session()->get('message') == 'Change to Not Published')
+			<h5 class="alert alert-danger">{{ session()->get('message') }}</h5>
+			@endif
+			@if(session()->get('message') == 'Edited')
+			<h5 class="alert alert-success">
+				{{session()->get('message')}}
+			</h5>
+			@endif
+			@if(count($allOprec))
+			@foreach($allOprec as $list)
+			@if($list->statuspublis)
+			<div class="col-md-12" style="border: solid #eee 3px;margin-bottom: 3%">
+				<h3>{{$list->name}} <a href="{{url('/oprec/edit/'.$list->id)}}" class="text-warning"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> EDIT</a></h3>
 				<hr>
 				
 				<div class="col-md-8">
 					<div class="col-md-7">
 						<table class="text-success">
 							<tr>
-								<td style="font-size: 200%">Status</td>
-								<td style="font-size: 200%">&nbsp;:&nbsp;</td>
-								<td style="font-size: 200%" class="text-danger"> Not Publish</td>
+								<td style="font-size: 150%">Status</td>
+								<td style="font-size: 150%">&nbsp;:&nbsp;</td>
+								@if($list->statuspublis)
+								<td style="font-size: 150%" class="text-succses">
+									Published 
+								</td>
+								@else
+								<td style="font-size: 150%" class="text-danger">
+									Not Published 
+								</td>
+								@endif
+
+								
 							</tr>
 							<tr>
-								<td style="font-size: 200%">max field person</td>
-								<td style="font-size: 200%">&nbsp;:&nbsp;</td>
-								<td style="font-size: 200%">3</td>
+								<td style="font-size: 150%">Max Field Person</td>
+								<td style="font-size: 150%">&nbsp;:&nbsp;</td>
+								<td style="font-size: 150%">{{$list['max-field-person']}}</td>
+							</tr>
+							<tr>
+								<td style="font-size: 150%">Deadline</td>
+								<td style="font-size: 150%">&nbsp;:&nbsp;</td>
+								<td style="font-size: 150%">{{$list['deadline']}}</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<p><a class="btn btn-primary form-control">View All Field</a></p>
-					<p><a class="btn btn-primary form-control">Add New Field</a></p>
-					<p><a class="btn btn-primary form-control" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Publish</a></p>
+					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/allfield')}}"  class="btn btn-primary form-control">View All Field</a></p>
+					<p><a href="{{url('/unpublish/'.$idinstansi.'/'.$list->id)}}"  class="btn btn-danger form-control">Unpublish</a></p>
 
 
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel">Publish This Oprec</h4>
-								</div>
-								<div class="modal-body">
-									<div class="alert alert-dismissible alert-warning">
-										<button type="button" class="close" data-dismiss="alert">&times;</button>
-										<h4>Warning!</h4>
-										<p>When you publish this oprec you cant add or change the setting of oprec except deadline oprec  </a>.</p>
-										
-
-									</div>
-									<form>
-										<div class="form-group">
-											{!! Form::label('date','Set Deadline Oprec', ['class'=>'col-md-4 control-label']) !!}
-											<input type="date" name="date" class="form-control">
-										</div>
-										<button type="submit" class="btn btn-primary">Publish Now</button>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
+			@else
+			<div class="col-md-12" style="border: solid #eee 3px;margin-bottom: 3%">
+				<h3>{{$list->name}}</h3>
+				<hr>
+
+				<div class="col-md-8">
+					<div class="col-md-7">
+						<table class="text-success">
+							<tr>
+								<td style="font-size: 150%">Status</td>
+								<td style="font-size: 150%">&nbsp;:&nbsp;</td>
+								@if($list->statuspublis)
+								<td style="font-size: 150%" class="text-succses">
+									Published 
+								</td>
+								@else
+								<td style="font-size: 150%" class="text-danger">
+									Not Published 
+								</td>
+								@endif
+
+							</tr>
+							<tr>
+								<td style="font-size: 150%">Max Field Person</td>
+								<td style="font-size: 150%">&nbsp;:&nbsp;</td>
+								<td style="font-size: 150%">{{$list['max-field-person']}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/allfield')}}"  class="btn btn-primary form-control">View All Field</a></p>
+					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/make/field')}}" class="btn btn-primary form-control">Add New Field</a></p>
+					<p><a class="btn btn-primary form-control" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Publish</a></p>
+					@include('user.instansi.oprec.modalpublish')
+				</div>
+			</div>
+
+			@endif
+			@endforeach
+			@endif
 
 		</div>
 
 	</div>
-</div>
-</div>
-@include('footer')
+
+	@include('footer')
 </body>
 </html>

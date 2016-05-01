@@ -5,8 +5,10 @@
 </head>
 <body>
 	@include('nav')
-	<div class="container">
+	<div class="container" style="margin-top: 10%">
 		<div class="col-md-12">
+			<h2> Create Oprec</h2>
+			<hr>
 			<div class="col-md-6 col-md-offset-1">
 				@foreach($errors->all() as $error) 
 				<p class='alert alert-danger'>{{$error}}</p>
@@ -22,12 +24,6 @@
 					{!! Form::label('max-field-person','Max Field/Person', ['class'=>'col-md-4 control-label']) !!}
 					{!! Form::input('number','max-field-person','',array('class'=>'name form-control','placeholder'=>'0')) !!}
 				</div>
-
-				<div class="form-group">
-					{!! Form::label('deadline', 'Closed At', ['class'=>'col-md-4 control-label']) !!}
-					<input name="deadline" type="date" class="form-control">
-				</div>
-
 				<div class="col-md-4 col-md-offset-8">
 					{!! Form::hidden('idinstansi',$idinstansi) !!}
 					{!! Form::submit('Create', ['class'=>'btn btn-primary form-control']) !!}

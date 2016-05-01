@@ -2,9 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Bidang;
 
 use Illuminate\Http\Request;
-
+use Input, Redirect, File, Session,Validator, Response;	
 class BidangController extends Controller {
 
 	/**
@@ -22,9 +23,15 @@ class BidangController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($idinstansi,$idoprec)
 	{
-		//
+		if(session()->get('isLogin')){
+			$title = 'Create Field';
+			return view('user.instansi.oprec.field.create',['title'=>$title,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec]); 
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
 	}
 
 	/**
@@ -34,7 +41,36 @@ class BidangController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		
+		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');
+			$input = Input::all();
+			$rules = array(
+				'name' =>'required', 
+				'deskripsi' =>'required', 
+				'cp' =>'required', 
+				);
+			
+			$validator = Validator::make($input,$rules);
+			if($validator->fails()){
+				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/make/field')->withInput()->withErrors($validator->errors());
+			}else{
+
+				
+				$bidang = Bidang::create([
+					'idoprec'=>$input['idoprec'],
+					'name'=>$input['name'],
+					'deskripsi'=>$input['deskripsi'],
+					'cp'=>$input['cp'],
+					]);
+
+				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/allfield')->with('message','1');
+			}
+
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
 	}
 
 	/**
@@ -78,7 +114,18 @@ class BidangController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+
+	}
+
+	public function viewAllField($idinstansi,$idoprec)
+	{
+		if(session()->get('isLogin')){
+			$allField = Bidang::where('idoprec',$idoprec)->get();
+			return view('user.instansi.oprec.field.viewallfield',['title'=>'All Field','allField'=>$allField,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec ]);
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
 	}
 
 }

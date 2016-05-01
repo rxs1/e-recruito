@@ -9,24 +9,18 @@
 					<h2>Latest Open Recruitment</h2>
 					<hr>
 				</div>
+				@if(count($allOprec))
+				@foreach($allOprec as $list)
 				<div class="col-md-4" >
-					<img src="" height="200" width="100%">
-					<h3>Title 1</h3>
-					<p>Lorem ipsum Dolore sint consequat aliquip culpa minim ad Excepteur elit laboris in consequat in consequat sed eu laboris adipisicing esse irure est nisi deserunt culpa id Ut aliquip reprehenderit culpa sed tempor sit ea et et Duis.</p>
-					<a class="btn btn-success">Join</a> <a class="btn btn-default">View</a>
+					<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
+					<h3>{{$list['name']}}</h3>
+					<p></p>
+					<a class="btn btn-success">Join</a> <a href="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" class="btn btn-default">View Brosur</a> <a href="{{url('oprec/'.$list->id)}}" class="btn btn-warning">View Oprec</a>
 				</div>
-				<div class="col-md-4">
-					<img src="" height="200" width="100%">
-					<h3>Title 2</h3>
-					<p>Lorem ipsum Dolore sint consequat aliquip culpa minim ad Excepteur elit laboris in consequat in consequat sed eu laboris adipisicing esse irure est nisi deserunt culpa id Ut aliquip reprehenderit culpa sed tempor sit ea et et Duis.</p>
-					<a class="btn btn-success">Join</a> <a class="btn btn-default">View</a>
-				</div>
-				<div class="col-md-4">
-					<img src="" height="200" width="100%">
-					<h3>Title 3</h3>
-					<p>Lorem ipsum Dolore sint consequat aliquip culpa minim ad Excepteur elit laboris in consequat in consequat sed eu laboris adipisicing esse irure est nisi deserunt culpa id Ut aliquip reprehenderit culpa sed tempor sit ea et et Duis.</p>
-					<a class="btn btn-success">Join</a> <a class="btn btn-default">View</a>
-				</div>
+				@endforeach
+				@else
+				<div class="alert alert-danger">Doesnt Have Any Publish Open Recruitment</div>
+				@endif
 				<div class="col-md-12" style="text-align: center">
 					<ul class="pagination">
 						<li class="disabled"><a href="#">&laquo;</a></li>
