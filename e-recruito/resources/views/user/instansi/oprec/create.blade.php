@@ -22,7 +22,7 @@
 
 				<div class="form-group">
 					{!! Form::label('max-field-person','Max Field/Person', ['class'=>'col-md-4 control-label']) !!}
-					{!! Form::input('number','max-field-person','',array('class'=>'name form-control','placeholder'=>'0')) !!}
+					{!! Form::input('number','max-field-person','',array('class'=>'name form-control','placeholder'=>'1','min'=>'1')) !!}
 				</div>
 				<div class="col-md-4 col-md-offset-8">
 					{!! Form::hidden('idinstansi',$idinstansi) !!}
