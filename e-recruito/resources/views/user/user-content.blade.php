@@ -11,7 +11,7 @@
 				</div>
 				@if(count($allOprec))
 				@foreach($allOprec as $list)
-				<div class="col-md-4" >
+				<div class="col-md-4" style="margin-bottom: 3%">
 					<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
 					<h3>{{$list['name']}}</h3>
 					<p></p>

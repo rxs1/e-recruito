@@ -284,7 +284,7 @@
 		</Theme>
 		<WaterMark Type="None"/>
 	</DocProps>
-	<Page Type="Page" Name="Page-1" Zoom="1" ZoomUI="1" Unit="mm" PrePaper="13" ID="10000">
+	<Page Type="Page" Name="Page-1" Zoom="0.75" ZoomUI="0.75" Unit="mm" PrePaper="13" ID="10000">
 		<PageProps mmTheme="2">
 			<Width>1188</Width>
 			<Height>840</Height>
@@ -296,12 +296,12 @@
 			<PageBreakTop>0</PageBreakTop>
 			<PageBreakRight>1</PageBreakRight>
 			<PageBreakBottom>1</PageBreakBottom>
-			<ScrollX>593</ScrollX>
-			<ScrollY>559</ScrollY>
+			<ScrollX>444</ScrollX>
+			<ScrollY>563</ScrollY>
 			<BackColor>#FFFFFFFF</BackColor>
 			<GridColor>#FFB4B4B4</GridColor>
 			<GridSpace>1</GridSpace>
-			<GridRealSpace>20</GridRealSpace>
+			<GridRealSpace>30</GridRealSpace>
 			<GridSubGrid>2</GridSubGrid>
 			<GridStyle>3</GridStyle>
 		</PageProps>
@@ -5376,167 +5376,12 @@
 					</Geometry>
 				</Geometries>
 			</Shape>
-			<Shape Type="Shape" ID="11086">
-				<Transform>
-					<Width>100</Width>
-					<Height>26</Height>
-					<Angle>0</Angle>
-					<GPinX>518.125</GPinX>
-					<GPinY>417.4</GPinY>
-					<LocPinX F="Width*0.5" R="0.5" M="1">50</LocPinX>
-					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
-					<FlipX>0</FlipX>
-					<FlipY>0</FlipY>
-				</Transform>
-				<CPoints>
-					<CPoint Name="Pt1" ID="1" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">50</X>
-						<Y F="Height*1" R="1" M="2">26</Y>
-					</CPoint>
-					<CPoint Name="Pt2" ID="2" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">50</X>
-						<Y F="Height*0" R="0" M="2">0</Y>
-					</CPoint>
-					<CPoint Name="Pt3" ID="3" Type="0">
-						<X F="Width*1" R="1" M="1">100</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-					<CPoint Name="Pt4" ID="4" Type="0">
-						<X F="Width*0" R="0" M="1">0</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-					<CPoint Name="Pt5" ID="5" Type="0">
-						<X F="Width*0.5" R="0.5" M="1">50</X>
-						<Y F="Height*0.5" R="0.5" M="2">13</Y>
-					</CPoint>
-				</CPoints>
-				<Misc/>
-				<Events/>
-				<Properties>
-					<Prop Name="Cost" ID="1">
-						<Type>4</Type>
-						<Format U="STR">0.00 USD</Format>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Cost</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-					<Prop Name="Duration" ID="2">
-						<Type>3</Type>
-						<Format U="STR">[h]:[mm]</Format>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Duration</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-					<Prop Name="Resources" ID="3">
-						<Type>0</Type>
-						<Format U="STR"/>
-						<Value>0</Value>
-						<Invisible F="FALSE">0</Invisible>
-						<Label>Resources</Label>
-						<DisplayMode>0</DisplayMode>
-					</Prop>
-				</Properties>
-				<ShapeFormat QuickMask="0">
-					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
-						<Stop>
-							<Color Value="#FFEDF0F7"/>
-							<Offset>0</Offset>
-						</Stop>
-						<Stop>
-							<Color Value="#FFA6BED0"/>
-							<Offset>1</Offset>
-						</Stop>
-					</FillFormat>
-					<LineFormat>
-						<LineWeight>1</LineWeight>
-						<LineCap>0</LineCap>
-						<LinePattern>1</LinePattern>
-						<Rounding>0</Rounding>
-						<BeginArrowID>0</BeginArrowID>
-						<BeginArrowSize>4</BeginArrowSize>
-						<EndArrowID>0</EndArrowID>
-						<EndArrowSize>4</EndArrowSize>
-						<LineFill Type="Solid">
-							<Color Value="#FF3C5C74"/>
-						</LineFill>
-					</LineFormat>
-					<EffectFormat>
-						<Shadow Mode="0"/>
-					</EffectFormat>
-				</ShapeFormat>
-				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 tipe:varchar\par&#x0D;&#x0A;}" ExtendMode="0" X="468" Y="409" Width="100" Height="16">
-						<TextFormat>
-							<TextFormatMask>0</TextFormatMask>
-							<FontFamily>Arial</FontFamily>
-							<FontWeight>400</FontWeight>
-							<FontHeight>10</FontHeight>
-							<FontItalic>FALSE</FontItalic>
-							<FontUnderline>FALSE</FontUnderline>
-							<FontStrikeout>FALSE</FontStrikeout>
-							<AlignHorizontal>Center</AlignHorizontal>
-							<AlignVertical>Middle</AlignVertical>
-							<Color Value="#FF000000"/>
-							<FontOffset>0</FontOffset>
-							<FontBackColor>#FFFEFD</FontBackColor>
-							<FontBullet>0</FontBullet>
-							<LeftOffset>0</LeftOffset>
-							<StartIndent>0</StartIndent>
-							<RightIndent>0</RightIndent>
-							<LineSpace>20</LineSpace>
-							<SpaceBefore>0</SpaceBefore>
-							<SpaceAfter>0</SpaceAfter>
-						</TextFormat>
-						<Transform>
-							<Width F="HYP(Width*1,Height*0)">100</Width>
-							<Height F="HYP(Width*0,Height*1)">26</Height>
-							<Angle>0</Angle>
-							<GPinX F="Width*0.5" R="0.5" M="1">50</GPinX>
-							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
-							<LocPinX F="Text.T1.Width*0.5">50</LocPinX>
-							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
-						</Transform>
-						<TxtField U="STR"/>
-					</Text>
-				</Texts>
-				<Geometries>
-					<Geometry>
-						<NoFill>0</NoFill>
-						<NoLine>0</NoLine>
-						<Closed>1</Closed>
-						<NoShow>0</NoShow>
-						<NoSnap>1</NoSnap>
-						<MoveTo JointType="0">
-							<X F="Width">100</X>
-							<Y F="Height">26</Y>
-						</MoveTo>
-						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">100</X>
-							<Y F="Height*0" R="0" M="2">0</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*0" R="0" M="1">0</X>
-							<Y F="Height*0" R="0" M="2">0</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*0" R="0" M="1">0</X>
-							<Y F="Height*1" R="1" M="2">26</Y>
-						</LineTo>
-						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">100</X>
-							<Y F="Height*1" R="1" M="2">26</Y>
-						</LineTo>
-					</Geometry>
-				</Geometries>
-			</Shape>
 			<Shape Type="Shape" ID="11096">
 				<Transform>
 					<Width>99.2501</Width>
 					<Height>26</Height>
 					<Angle>0</Angle>
-					<GPinX>622.125</GPinX>
+					<GPinX>518.125</GPinX>
 					<GPinY>417.4</GPinY>
 					<LocPinX F="Width*0.5" R="0.5" M="1">49.625</LocPinX>
 					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
@@ -5622,7 +5467,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="573" Y="409" Width="99" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="469" Y="409" Width="99" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -5688,12 +5533,12 @@
 			</Shape>
 			<Shape Type="Rectangle" NameU="Rectangle" Name="Rectangle" ID="11101">
 				<Transform>
-					<Width>97</Width>
+					<Width>108.126</Width>
 					<Height>26</Height>
 					<Angle>0</Angle>
-					<GPinX>192.374</GPinX>
+					<GPinX>206.937</GPinX>
 					<GPinY>390.4</GPinY>
-					<LocPinX F="Width*0.5" R="0.5" M="1">48.5</LocPinX>
+					<LocPinX F="Width*0.5" R="0.5" M="1">54.063</LocPinX>
 					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
 					<FlipX>0</FlipX>
 					<FlipY>0</FlipY>
@@ -5718,7 +5563,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\ul\f0\fs20 TUGAS\par&#x0D;&#x0A;}" ExtendMode="0" X="144" Y="382" Width="97" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\ul\f0\fs20 TUGAS_BIDANG\par&#x0D;&#x0A;}" ExtendMode="0" X="153" Y="382" Width="108" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -5741,12 +5586,12 @@
 							<SpaceAfter>0</SpaceAfter>
 						</TextFormat>
 						<Transform>
-							<Width F="HYP(Width*1,Height*0)">97</Width>
+							<Width F="HYP(Width*1,Height*0)">108.126</Width>
 							<Height F="HYP(Width*0,Height*1)">26</Height>
 							<Angle>0</Angle>
-							<GPinX F="Width*0.5" R="0.5" M="1">48.5</GPinX>
+							<GPinX F="Width*0.5" R="0.5" M="1">54.063</GPinX>
 							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
-							<LocPinX F="Text.T1.Width*0.5">48.5</LocPinX>
+							<LocPinX F="Text.T1.Width*0.5">54.063</LocPinX>
 							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
 						</Transform>
 						<TxtField U="STR"/>
@@ -5764,11 +5609,11 @@
 							<Y F="Height*0" R="0" M="2">0</Y>
 						</MoveTo>
 						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">97</X>
+							<X F="Width*1" R="1" M="1">108.126</X>
 							<Y F="Height*0" R="0" M="2">0</Y>
 						</LineTo>
 						<LineTo JointType="0">
-							<X F="Width*1" R="1" M="1">97</X>
+							<X F="Width*1" R="1" M="1">108.126</X>
 							<Y F="Height*1" R="1" M="2">26</Y>
 						</LineTo>
 						<LineTo JointType="0">
@@ -8359,7 +8204,7 @@
 					<Width>125.25</Width>
 					<Height>26</Height>
 					<Angle>0</Angle>
-					<GPinX>744.124</GPinX>
+					<GPinX>738.499</GPinX>
 					<GPinY>644.4</GPinY>
 					<LocPinX F="Width*0.5" R="0.5" M="1">62.625</LocPinX>
 					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
@@ -8445,7 +8290,7 @@
 					</EffectFormat>
 				</ShapeFormat>
 				<Texts>
-					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 wawancaradate:date\par&#x0D;&#x0A;}" ExtendMode="0" X="681" Y="636" Width="126" Height="16">
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 wawancaradate:date\par&#x0D;&#x0A;}" ExtendMode="0" X="675.375" Y="636" Width="126" Height="16">
 						<TextFormat>
 							<TextFormatMask>0</TextFormatMask>
 							<FontFamily>Arial</FontFamily>
@@ -10941,6 +10786,567 @@
 					</Geometry>
 				</Geometries>
 			</Shape>
+			<Shape Type="Rectangle" NameU="Rectangle" Name="Rectangle" ID="173">
+				<Transform>
+					<Width>108.126</Width>
+					<Height>26</Height>
+					<Angle>0</Angle>
+					<GPinX>640</GPinX>
+					<GPinY>390.4</GPinY>
+					<LocPinX F="Width*0.5" R="0.5" M="1">54.063</LocPinX>
+					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
+					<FlipX>0</FlipX>
+					<FlipY>0</FlipY>
+				</Transform>
+				<Misc/>
+				<Events/>
+				<ShapeFormat QuickMask="0">
+					<FillFormat/>
+					<LineFormat>
+						<LineWeight>1</LineWeight>
+						<LineCap>0</LineCap>
+						<LinePattern>1</LinePattern>
+						<Rounding>0</Rounding>
+						<BeginArrowID>0</BeginArrowID>
+						<BeginArrowSize>4</BeginArrowSize>
+						<EndArrowID>0</EndArrowID>
+						<EndArrowSize>4</EndArrowSize>
+						<LineFill/>
+					</LineFormat>
+					<EffectFormat>
+						<Shadow Mode="0"/>
+					</EffectFormat>
+				</ShapeFormat>
+				<Texts>
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\ul\f0\fs20 TUGAS_UMUM\par&#x0D;&#x0A;}" ExtendMode="0" X="586.25" Y="382" Width="108" Height="16">
+						<TextFormat>
+							<TextFormatMask>0</TextFormatMask>
+							<FontFamily>Arial</FontFamily>
+							<FontWeight>400</FontWeight>
+							<FontHeight>10</FontHeight>
+							<FontItalic>FALSE</FontItalic>
+							<FontUnderline>TRUE</FontUnderline>
+							<FontStrikeout>FALSE</FontStrikeout>
+							<AlignHorizontal>Center</AlignHorizontal>
+							<AlignVertical>Middle</AlignVertical>
+							<Color Value="#FF000000"/>
+							<FontOffset>0</FontOffset>
+							<FontBackColor>#FFFEFD</FontBackColor>
+							<FontBullet>0</FontBullet>
+							<LeftOffset>0</LeftOffset>
+							<StartIndent>0</StartIndent>
+							<RightIndent>0</RightIndent>
+							<LineSpace>20</LineSpace>
+							<SpaceBefore>0</SpaceBefore>
+							<SpaceAfter>0</SpaceAfter>
+						</TextFormat>
+						<Transform>
+							<Width F="HYP(Width*1,Height*0)">108.126</Width>
+							<Height F="HYP(Width*0,Height*1)">26</Height>
+							<Angle>0</Angle>
+							<GPinX F="Width*0.5" R="0.5" M="1">54.063</GPinX>
+							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
+							<LocPinX F="Text.T1.Width*0.5">54.063</LocPinX>
+							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
+						</Transform>
+						<TxtField U="STR"/>
+					</Text>
+				</Texts>
+				<Geometries>
+					<Geometry>
+						<NoFill>0</NoFill>
+						<NoLine>0</NoLine>
+						<Closed>1</Closed>
+						<NoShow>0</NoShow>
+						<NoSnap>1</NoSnap>
+						<MoveTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</MoveTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">108.126</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">108.126</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+					</Geometry>
+				</Geometries>
+			</Shape>
+			<Shape Type="Shape" ID="174">
+				<Transform>
+					<Width>100</Width>
+					<Height>26</Height>
+					<Angle>0</Angle>
+					<GPinX>635.937</GPinX>
+					<GPinY>420</GPinY>
+					<LocPinX F="Width*0.5" R="0.5" M="1">50</LocPinX>
+					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
+					<FlipX>0</FlipX>
+					<FlipY>0</FlipY>
+				</Transform>
+				<CPoints>
+					<CPoint Name="Pt1" ID="1" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*1" R="1" M="2">26</Y>
+					</CPoint>
+					<CPoint Name="Pt2" ID="2" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*0" R="0" M="2">0</Y>
+					</CPoint>
+					<CPoint Name="Pt3" ID="3" Type="0">
+						<X F="Width*1" R="1" M="1">100</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt4" ID="4" Type="0">
+						<X F="Width*0" R="0" M="1">0</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt5" ID="5" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+				</CPoints>
+				<Misc/>
+				<Events/>
+				<Properties>
+					<Prop Name="Cost" ID="1">
+						<Type>4</Type>
+						<Format U="STR">0.00 USD</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Cost</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Duration" ID="2">
+						<Type>3</Type>
+						<Format U="STR">[h]:[mm]</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Duration</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Resources" ID="3">
+						<Type>0</Type>
+						<Format U="STR"/>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Resources</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+				</Properties>
+				<ShapeFormat QuickMask="0">
+					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
+						<Stop>
+							<Color Value="#FFEDF0F7"/>
+							<Offset>0</Offset>
+						</Stop>
+						<Stop>
+							<Color Value="#FFA6BED0"/>
+							<Offset>1</Offset>
+						</Stop>
+					</FillFormat>
+					<LineFormat>
+						<LineWeight>1</LineWeight>
+						<LineCap>0</LineCap>
+						<LinePattern>1</LinePattern>
+						<Rounding>0</Rounding>
+						<BeginArrowID>0</BeginArrowID>
+						<BeginArrowSize>4</BeginArrowSize>
+						<EndArrowID>0</EndArrowID>
+						<EndArrowSize>4</EndArrowSize>
+						<LineFill Type="Solid">
+							<Color Value="#FF3C5C74"/>
+						</LineFill>
+					</LineFormat>
+					<EffectFormat>
+						<Shadow Mode="0"/>
+					</EffectFormat>
+				</ShapeFormat>
+				<Texts>
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 id:int\par&#x0D;&#x0A;}" ExtendMode="0" X="586.063" Y="411.6" Width="100" Height="16">
+						<TextFormat>
+							<TextFormatMask>0</TextFormatMask>
+							<FontFamily>Arial</FontFamily>
+							<FontWeight>400</FontWeight>
+							<FontHeight>10</FontHeight>
+							<FontItalic>FALSE</FontItalic>
+							<FontUnderline>FALSE</FontUnderline>
+							<FontStrikeout>FALSE</FontStrikeout>
+							<AlignHorizontal>Center</AlignHorizontal>
+							<AlignVertical>Middle</AlignVertical>
+							<Color Value="#FF000000"/>
+							<FontOffset>0</FontOffset>
+							<FontBackColor>#FFFEFD</FontBackColor>
+							<FontBullet>0</FontBullet>
+							<LeftOffset>0</LeftOffset>
+							<StartIndent>0</StartIndent>
+							<RightIndent>0</RightIndent>
+							<LineSpace>20</LineSpace>
+							<SpaceBefore>0</SpaceBefore>
+							<SpaceAfter>0</SpaceAfter>
+						</TextFormat>
+						<Transform>
+							<Width F="HYP(Width*1,Height*0)">100</Width>
+							<Height F="HYP(Width*0,Height*1)">26</Height>
+							<Angle>0</Angle>
+							<GPinX F="Width*0.5" R="0.5" M="1">50</GPinX>
+							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
+							<LocPinX F="Text.T1.Width*0.5">50</LocPinX>
+							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
+						</Transform>
+						<TxtField U="STR"/>
+					</Text>
+				</Texts>
+				<Geometries>
+					<Geometry>
+						<NoFill>0</NoFill>
+						<NoLine>0</NoLine>
+						<Closed>1</Closed>
+						<NoShow>0</NoShow>
+						<NoSnap>1</NoSnap>
+						<MoveTo JointType="0">
+							<X F="Width">100</X>
+							<Y F="Height">26</Y>
+						</MoveTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">100</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">100</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+					</Geometry>
+				</Geometries>
+			</Shape>
+			<Shape Type="Shape" ID="181">
+				<Transform>
+					<Width>99.2501</Width>
+					<Height>26</Height>
+					<Angle>0</Angle>
+					<GPinX>841.374</GPinX>
+					<GPinY>420</GPinY>
+					<LocPinX F="Width*0.5" R="0.5" M="1">49.625</LocPinX>
+					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
+					<FlipX>0</FlipX>
+					<FlipY>0</FlipY>
+				</Transform>
+				<CPoints>
+					<CPoint Name="Pt1" ID="1" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">49.625</X>
+						<Y F="Height*1" R="1" M="2">26</Y>
+					</CPoint>
+					<CPoint Name="Pt2" ID="2" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">49.625</X>
+						<Y F="Height*0" R="0" M="2">0</Y>
+					</CPoint>
+					<CPoint Name="Pt3" ID="3" Type="0">
+						<X F="Width*1" R="1" M="1">99.2501</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt4" ID="4" Type="0">
+						<X F="Width*0" R="0" M="1">0</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt5" ID="5" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">49.625</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+				</CPoints>
+				<Misc/>
+				<Events/>
+				<Properties>
+					<Prop Name="Cost" ID="1">
+						<Type>4</Type>
+						<Format U="STR">0.00 USD</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Cost</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Duration" ID="2">
+						<Type>3</Type>
+						<Format U="STR">[h]:[mm]</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Duration</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Resources" ID="3">
+						<Type>0</Type>
+						<Format U="STR"/>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Resources</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+				</Properties>
+				<ShapeFormat QuickMask="0">
+					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
+						<Stop>
+							<Color Value="#FFEDF0F7"/>
+							<Offset>0</Offset>
+						</Stop>
+						<Stop>
+							<Color Value="#FFA6BED0"/>
+							<Offset>1</Offset>
+						</Stop>
+					</FillFormat>
+					<LineFormat>
+						<LineWeight>1</LineWeight>
+						<LineCap>0</LineCap>
+						<LinePattern>1</LinePattern>
+						<Rounding>0</Rounding>
+						<BeginArrowID>0</BeginArrowID>
+						<BeginArrowSize>4</BeginArrowSize>
+						<EndArrowID>0</EndArrowID>
+						<EndArrowSize>4</EndArrowSize>
+						<LineFill Type="Solid">
+							<Color Value="#FF3C5C74"/>
+						</LineFill>
+					</LineFormat>
+					<EffectFormat>
+						<Shadow Mode="0"/>
+					</EffectFormat>
+				</ShapeFormat>
+				<Texts>
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 deskripsi:text\par&#x0D;&#x0A;}" ExtendMode="0" X="792.249" Y="411.6" Width="99" Height="16">
+						<TextFormat>
+							<TextFormatMask>0</TextFormatMask>
+							<FontFamily>Arial</FontFamily>
+							<FontWeight>400</FontWeight>
+							<FontHeight>10</FontHeight>
+							<FontItalic>FALSE</FontItalic>
+							<FontUnderline>FALSE</FontUnderline>
+							<FontStrikeout>FALSE</FontStrikeout>
+							<AlignHorizontal>Center</AlignHorizontal>
+							<AlignVertical>Middle</AlignVertical>
+							<Color Value="#FF000000"/>
+							<FontOffset>0</FontOffset>
+							<FontBackColor>#FFFEFD</FontBackColor>
+							<FontBullet>0</FontBullet>
+							<LeftOffset>0</LeftOffset>
+							<StartIndent>0</StartIndent>
+							<RightIndent>0</RightIndent>
+							<LineSpace>20</LineSpace>
+							<SpaceBefore>0</SpaceBefore>
+							<SpaceAfter>0</SpaceAfter>
+						</TextFormat>
+						<Transform>
+							<Width F="HYP(Width*1,Height*0)">99.2501</Width>
+							<Height F="HYP(Width*0,Height*1)">26</Height>
+							<Angle>0</Angle>
+							<GPinX F="Width*0.5" R="0.5" M="1">49.625</GPinX>
+							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
+							<LocPinX F="Text.T1.Width*0.5">49.625</LocPinX>
+							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
+						</Transform>
+						<TxtField U="STR"/>
+					</Text>
+				</Texts>
+				<Geometries>
+					<Geometry>
+						<NoFill>0</NoFill>
+						<NoLine>0</NoLine>
+						<Closed>1</Closed>
+						<NoShow>0</NoShow>
+						<NoSnap>1</NoSnap>
+						<MoveTo JointType="0">
+							<X F="Width">99.2501</X>
+							<Y F="Height">26</Y>
+						</MoveTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">99.2501</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">99.2501</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+					</Geometry>
+				</Geometries>
+			</Shape>
+			<Shape Type="Shape" ID="182">
+				<Transform>
+					<Width>100</Width>
+					<Height>26</Height>
+					<Angle>0</Angle>
+					<GPinX>738.499</GPinX>
+					<GPinY>420</GPinY>
+					<LocPinX F="Width*0.5" R="0.5" M="1">50</LocPinX>
+					<LocPinY F="Height*0.5" R="0.5" M="2">13</LocPinY>
+					<FlipX>0</FlipX>
+					<FlipY>0</FlipY>
+				</Transform>
+				<CPoints>
+					<CPoint Name="Pt1" ID="1" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*1" R="1" M="2">26</Y>
+					</CPoint>
+					<CPoint Name="Pt2" ID="2" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*0" R="0" M="2">0</Y>
+					</CPoint>
+					<CPoint Name="Pt3" ID="3" Type="0">
+						<X F="Width*1" R="1" M="1">100</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt4" ID="4" Type="0">
+						<X F="Width*0" R="0" M="1">0</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+					<CPoint Name="Pt5" ID="5" Type="0">
+						<X F="Width*0.5" R="0.5" M="1">50</X>
+						<Y F="Height*0.5" R="0.5" M="2">13</Y>
+					</CPoint>
+				</CPoints>
+				<Misc/>
+				<Events/>
+				<Properties>
+					<Prop Name="Cost" ID="1">
+						<Type>4</Type>
+						<Format U="STR">0.00 USD</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Cost</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Duration" ID="2">
+						<Type>3</Type>
+						<Format U="STR">[h]:[mm]</Format>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Duration</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+					<Prop Name="Resources" ID="3">
+						<Type>0</Type>
+						<Format U="STR"/>
+						<Value>0</Value>
+						<Invisible F="FALSE">0</Invisible>
+						<Label>Resources</Label>
+						<DisplayMode>0</DisplayMode>
+					</Prop>
+				</Properties>
+				<ShapeFormat QuickMask="0">
+					<FillFormat Type="Gradient" GradientType="Linear" StopNum="2" Direction="90">
+						<Stop>
+							<Color Value="#FFEDF0F7"/>
+							<Offset>0</Offset>
+						</Stop>
+						<Stop>
+							<Color Value="#FFA6BED0"/>
+							<Offset>1</Offset>
+						</Stop>
+					</FillFormat>
+					<LineFormat>
+						<LineWeight>1</LineWeight>
+						<LineCap>0</LineCap>
+						<LinePattern>1</LinePattern>
+						<Rounding>0</Rounding>
+						<BeginArrowID>0</BeginArrowID>
+						<BeginArrowSize>4</BeginArrowSize>
+						<EndArrowID>0</EndArrowID>
+						<EndArrowSize>4</EndArrowSize>
+						<LineFill Type="Solid">
+							<Color Value="#FF3C5C74"/>
+						</LineFill>
+					</LineFormat>
+					<EffectFormat>
+						<Shadow Mode="0"/>
+					</EffectFormat>
+				</ShapeFormat>
+				<Texts>
+					<Text ID="1" Name="T1" Rtf="{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}&#x0D;&#x0A;\viewkind4\uc1\pard\qc\f0\fs20 idoprec:int\par&#x0D;&#x0A;}" ExtendMode="0" X="688.624" Y="411.6" Width="100" Height="16">
+						<TextFormat>
+							<TextFormatMask>0</TextFormatMask>
+							<FontFamily>Arial</FontFamily>
+							<FontWeight>400</FontWeight>
+							<FontHeight>10</FontHeight>
+							<FontItalic>FALSE</FontItalic>
+							<FontUnderline>FALSE</FontUnderline>
+							<FontStrikeout>FALSE</FontStrikeout>
+							<AlignHorizontal>Center</AlignHorizontal>
+							<AlignVertical>Middle</AlignVertical>
+							<Color Value="#FF000000"/>
+							<FontOffset>0</FontOffset>
+							<FontBackColor>#FFFEFD</FontBackColor>
+							<FontBullet>0</FontBullet>
+							<LeftOffset>0</LeftOffset>
+							<StartIndent>0</StartIndent>
+							<RightIndent>0</RightIndent>
+							<LineSpace>20</LineSpace>
+							<SpaceBefore>0</SpaceBefore>
+							<SpaceAfter>0</SpaceAfter>
+						</TextFormat>
+						<Transform>
+							<Width F="HYP(Width*1,Height*0)">100</Width>
+							<Height F="HYP(Width*0,Height*1)">26</Height>
+							<Angle>0</Angle>
+							<GPinX F="Width*0.5" R="0.5" M="1">50</GPinX>
+							<GPinY F="Height*0.5" R="0.5" M="2">13</GPinY>
+							<LocPinX F="Text.T1.Width*0.5">50</LocPinX>
+							<LocPinY F="Text.T1.Height*0.5">13</LocPinY>
+						</Transform>
+						<TxtField U="STR"/>
+					</Text>
+				</Texts>
+				<Geometries>
+					<Geometry>
+						<NoFill>0</NoFill>
+						<NoLine>0</NoLine>
+						<Closed>1</Closed>
+						<NoShow>0</NoShow>
+						<NoSnap>1</NoSnap>
+						<MoveTo JointType="0">
+							<X F="Width">100</X>
+							<Y F="Height">26</Y>
+						</MoveTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">100</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*0" R="0" M="2">0</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*0" R="0" M="1">0</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+						<LineTo JointType="0">
+							<X F="Width*1" R="1" M="1">100</X>
+							<Y F="Height*1" R="1" M="2">26</Y>
+						</LineTo>
+					</Geometry>
+				</Geometries>
+			</Shape>
 		</Layer>
 		<Connects>
 			<Connect FromShape="128" FromPart="9" FromName="" ToShape="10770" ToPart="101" ToName=""/>
@@ -10963,7 +11369,7 @@
 		</Connects>
 	</Page>
 	<Preview>
-		<![CDATA[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]]>
+		<![CDATA[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]]>
 	</Preview>
 </Document>
 

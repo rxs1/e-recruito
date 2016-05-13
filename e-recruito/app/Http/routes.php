@@ -43,6 +43,11 @@ Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/allfield', 'BidangCo
 
 /*PendaftarOPrec*/
 
+/*Tugas*/
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/commontask', 'BidangController@viewAllField');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idtugas}/fieldtask', 'BidangController@viewAllField');
+
+
 /*---------------------------------------------------*/
 /*POST USER*/
 Route::post('/register', 'UserController@register');
