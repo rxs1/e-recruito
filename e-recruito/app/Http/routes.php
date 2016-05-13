@@ -61,9 +61,7 @@ Route::post('/pengguna/my-profile/{id}', 'UserController@editProfile');
 Route::resource('instansi', 'InstansiController');
 Route::resource('user', 'UserController');
 Route::resource('oprec', 'OprecController');
-Route::resource('tugas', 'TugasController');
 Route::resource('bidang', 'BidangController');
-Route::resource('pendaftar-oprec', 'PendaftarOprec@Controller');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
@@ -72,3 +70,7 @@ Route::get('/admin', 'HomeController@homeAdmin');
 Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDownloadProve');
 Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');
 Route::get('/instansi/status/ignore/{id}', 'InstansiController@ignoreInstance');
+
+/*Route::get('user/profile', [
+	'as' => 'profile.name', 'uses' => 'BidangController@create'
+	]);*/
