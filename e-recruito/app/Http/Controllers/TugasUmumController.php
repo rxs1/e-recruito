@@ -4,10 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\PendaftarOprec;
-use Input, Redirect, File, Session,Validator, Response;
 
-class PendaftarOprecController extends Controller {
+class TugasUmumController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -83,21 +81,4 @@ class PendaftarOprecController extends Controller {
 		//
 	}
 
-		/**
-	 *	Adding user who join to an Open Recruitment
-	 */
-		public function joinOprec($iduser, $idoprec) {
-			if(session()->get('isLogin')) {
-				PendaftarOprec::create([
-
-					'iduser' => $iduser,
-					'idoprec' => $idoprec,
-					]);
-
-				return Redirect::to('/pengguna');
-			} else {
-				return redirect('/');
-			}
-		}
-
-	}
+}

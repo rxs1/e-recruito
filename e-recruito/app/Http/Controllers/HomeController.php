@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Oprec;
-use Input, Redirect, File, Session,Validator, Response;	
+use Input, Redirect, File, Session,Validator, Response;
+
+
 class HomeController extends Controller {
 
 
