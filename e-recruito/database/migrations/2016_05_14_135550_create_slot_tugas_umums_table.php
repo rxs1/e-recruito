@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTugasBidangsTable extends Migration {
+class CreateSlotTugasUmumsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,16 @@ class CreateTugasBidangsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tugas-bidang', function(Blueprint $table)
-		{	
+		
+		Schema::create('slot-tugas-umum', function(Blueprint $table)
+		{
 			$table->increments('id');
-			$table->integer('idbidang');
+			$table->integer('idtugasumum');
 			$table->integer('idoprec');
-			$table->text('deskripsi');
+			$table->text('link-tugas');
 			$table->timestamps();
 		});
+
 	}
 
 	/**
@@ -29,7 +31,7 @@ class CreateTugasBidangsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('tugas_bidang');
+		Schema::drop('slot-tugas-umum');
 	}
 
 }
