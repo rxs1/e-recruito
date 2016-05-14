@@ -4,7 +4,7 @@
 	@include('head')
 </head>
 <body>
-	@include ('admin.admin-nav')
+	@include ('nav')
 	@include('admin.admin-content')
 	@include('footer')
 

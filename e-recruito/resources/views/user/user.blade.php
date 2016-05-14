@@ -4,7 +4,7 @@
 	@include('head')
 </head>
 <body>
-	@include ('user.user-nav')
+	@include ('nav')
 	@include('user.user-content')
 	@include('footer')
 

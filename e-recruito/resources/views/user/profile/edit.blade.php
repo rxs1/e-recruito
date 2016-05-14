@@ -5,7 +5,7 @@
 	@include('head')
 </head>
 <body>
-	@include('user.user-nav')
+	@include('nav')
 	<div class="container-fluid">
 		<div class="container">
 			<div class="row">
@@ -43,23 +43,40 @@
 							</div>
 							<div class="form-group" >
 								{!! Form::label('name','Name', ['class'=>'col-md-4 control-label']) !!}
-
 								{!! Form::text('name',$user['name'],array('class'=>'form-control','placeholder'=>'Your name')) !!}
+							</div>
+							<div class="form-group" >
+
+								{!! Form::label('motto','Motto', ['class'=>'col-md-4 control-label']) !!}
+								{!! Form::text('motto',$user['motto'],array('class'=>'form-control','placeholder'=>'ex: Always Be the One')) !!}
 
 							</div>
-
-							<div class="form-group">
-								{!! Form::label('username','Username', ['class'=>'col-md-4 control-label']) !!}
-
-								{!! Form::text('username',$user['username'],array('class'=>'form-control','placeholder'=>'username without space')) !!}
-
-							</div>
-
 							<div class="form-group">
 								{!! Form::label('email','Email', ['class'=>'col-md-4 control-label']) !!}
 
 								{!! Form::text('email',$user['email'],array('class'=>'email form-control','placeholder'=>'xyz@example.com')) !!}
 
+							</div>
+							<div class="form-group" >
+								{!! Form::label('region','Region', ['class'=>'col-md-4 control-label']) !!}
+								{!! Form::text('region',$user['region'],array('class'=>'form-control','placeholder'=>'Depok')) !!}
+
+							</div>
+							<div class="form-group" >
+								{!! Form::label('profesi','Profession', ['class'=>'col-md-4 control-label']) !!}
+								{!! Form::text('profesi',$user['profesi'],array('class'=>'form-control','placeholder'=>'Student')) !!}
+							</div>
+							<div class="form-group" >
+								{!! Form::label('birthdate','Birthday', ['class'=>'col-md-4 control-label']) !!}
+								<br>
+								<p style="text-align: left;float: left">
+									Your Current Birthday = 
+									@if(!$user['birthdate'])
+									Not Define
+									@endif
+									{{$user['birthdate']}}
+								</p> 
+								<input name="birthdate" type="date" class="form-control">
 							</div>
 
 							<div class="col-md-6 col-md-offset-3">

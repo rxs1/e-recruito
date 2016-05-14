@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="panel-body">
-					{!!Form::open(array('action'=>'UserController@create'))!!}
+					{!!Form::open(array('action'=>'UserController@register'))!!}
 
 					@foreach($errors->all() as $error)
 					<p class='alert alert-danger'>{{$error}}</p>
@@ -31,13 +31,6 @@
 						{!! Form::label('name','Fullname', ['class'=>'col-md-4 control-label']) !!}
 
 						{!! Form::text('name',null,array('class'=>' form-control','placeholder'=>'Enter your fullname')) !!}
-
-					</div>
-
-					<div class="form-group">
-						{!! Form::label('username','Username', ['class'=>'col-md-4 control-label']) !!}
-
-						{!! Form::text('username',null,array('class'=>'form-control','placeholder'=>'Enter your username (without space)')) !!}
 
 					</div>
 

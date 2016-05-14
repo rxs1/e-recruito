@@ -1,0 +1,12 @@
+html, body {
+	background-color: #eeebe2;
+}
+
+.btn, .btn-default, .btn:hover, .btn-default:hover {
+	background-color: #63aa9c;
+	color: #ffffff;
+}
+
+.content {
+	padding-top: 50px;
+}

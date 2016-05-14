@@ -1,3 +1,19 @@
+	
+
+<?php 
+$user = session()->get('isLogin');
+
+function checkAnyInstanceByUserId( $id ){
+
+	$instansi = App\Instansi::where('iduser',$id)->get();
+	if(count($instansi)){
+		return 1;
+	}else{
+		return 0;
+	}
+} 
+
+?>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -12,21 +28,31 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="{{url('/admin')}}">Home</a></li>
-				<li><a href="{{url('/user')}}">User Management</a></li>
+				@if($user['role'] == 0) <!-- Kala user biasa-->
+				<li ><a href="{{url('/pengguna')}}">Home</a></li>
+				@if(checkAnyInstanceByUserId($user['id']))
+				<li ><a href="{{url('/pengguna/instansi')}}"> My Instance</a></li>
+				@endif
 				<li><a href="{{url('/FAQ')}}">FAQ</a></li>
+				@else <!-- Kala user admin-->
+				<li ><a href="{{url('/pengguna')}}">Home</a></li>
+				<li><a href="{{url('/user')}}">User Management</a></li>
+				<li><a href="{{url('/instansi')}}">Intance Management</a></li>
+				<li><a href="{{url('/FAQ')}}">FAQ</a></li>
+				@endif
+
 			</ul>
-			
+
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-					<?php $user = session()->get('isLogin') ?>
+
 
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img style="margin-top: -5px"  src="{{url('/public/assets/img/avatar/'.$user['foto'])}}" height="30" width="30"> Hi {{$user['name']}}<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="{{url('pengguna/my-profile')}}">My Profile</a></li>
-						<li><a href="#">Setting</a></li>
+						<li><a href="{{url('/pengguna/my-profile')}}">My Profile</a></li>
+						<li><a href="{{url('/instansi/create')}}">Create Instance</a></li>
 						<li><a href="{{url('/logout')}}">Logout</a></li>
-						
+
 					</ul>
 				</li>
 

@@ -20,13 +20,41 @@ class UserController extends Controller {
 			if ($user->role == 0) {
 				return redirect('/pengguna');
 			} else {
-				$users = Users::paginate(10);
+				$users = Users::where('role','=',0)->paginate(10);
 				$title = 'List Users';
 				return view('admin.users.index', compact('users','title'));
 			}
 		}else{
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);
+		}
+	}
+
+	public function register(){
+
+		$input = Input::all();
+		$rules = array(
+			'name' =>'required', 
+			
+			'email' =>'required|unique:users,email', 
+			'password' =>'required|min:8', 
+			'repassword' =>'required|same:password'
+			);
+
+
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()){
+			return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
+		}else{
+			$user = Users::create([
+				'name'=>$input['name'],
+				'email'=>$input['email'],
+				'password'=>md5($input['password']),
+				'foto'=>'default.gif',
+				'role'=>0
+				]);
+
+			return Redirect::to('/login')->with('message','1');
 		}
 	}
 
@@ -42,34 +70,11 @@ class UserController extends Controller {
 				return view('admin.users.create', ['title'=>$title]);
 			}
 		} else {
-			$input = Input::all();
-			$rules = array(
-				'name' =>'required', 
-				'username' =>'required|unique:users,username', 
-				'email' =>'required|unique:users,email', 
-				'password' =>'required|min:8', 
-				'repassword' =>'required|same:password'
-				);
 
-
-			$validator = Validator::make($input,$rules);
-			if($validator->fails()){
-				return Redirect::to('/signup')->withInput()->withErrors($validator->errors());
-			}else{
-				$user = Users::create([
-					'name'=>$input['name'],
-					'username'=>$input['username'],
-					'email'=>$input['email'],
-					'password'=>md5($input['password']),
-					'foto'=>'default.gif',
-					'role'=>0
-					]);
-
-				return Redirect::to('/login')->with('message','1');
-			}
+			return Redirect::to('/login');
 		}		
 	}
-	
+
 	/**
 	 * Authentication 
 	 *
@@ -129,6 +134,12 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$specificUser = Users::find($id);
+					if (!$specificUser) {
+						return Redirect::route('user.index');
+					}
+					if ($specificUser->role == 1) {
+						return Redirect::route('user.index');
+					}
 					$title = 'Details of '.$specificUser->name;
 					return view('admin.users.show', compact('specificUser','title'));
 				}
@@ -151,8 +162,10 @@ class UserController extends Controller {
 				$Input = Input::all();
 				$rules = array(
 					'name'=>'required',
-					'username'=>'required',
 					'email'=>'required|email',
+					'region'=>'required',
+					'motto'=>'required',
+					'profesi'=>'required',
 					'foto'=>'mimes:jpeg,jpg,bmp,png',	
 					);
 				$validator = Validator::make($Input,$rules);
@@ -162,9 +175,13 @@ class UserController extends Controller {
 					
 					$user = Users::find($user1['id']);
 					$user->name = $Input['name'];
-					$user->username = $Input['username'];
 					$user->email = $Input['email'];
-
+					$user->motto = $Input['motto'];
+					if($Input['birthdate']){
+						$user->birthdate = $Input['birthdate'];
+					}
+					$user->profesi = $Input['profesi'];
+					$user->region = $Input['region'];
 					$image = Input::file('foto');
 					if(isset($Input['foto'])){
 						if($user->foto != 'default.gif'){
@@ -177,7 +194,13 @@ class UserController extends Controller {
 
 					$user->save(); 
 					Session::put('isLogin', $user);
-					return Redirect::to('/pengguna/my-profile')->withInput()->with('isMessage',1);
+					$loginuser = session()->get('isLogin');
+					if($loginuser['id'] == 0){
+						return Redirect::to('/pengguna/my-profile')->withInput()->with('isMessage',1);
+					}else{
+						return Redirect::to('/user')->withInput()->with('isMessage',1);
+					}
+					
 				}
 			}else{
 				return Redirect::to('/')->withInput();
@@ -197,6 +220,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+					
 					$title = 'Edit data User';
 					return view('admin.users.edit', compact('user', 'title'));
 				}
@@ -219,9 +249,8 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$rules = array(
-						'name' =>'required', 
-						'username' =>'required|unique:users,username', 
-						'email' =>'required|unique:users,email', 
+						'name' =>'required', 						
+						'email' =>'required|email|unique:users,email', 
 						'password' =>'required|min:8',
 						);
 					$this->validate($request, $rules);
@@ -252,14 +281,52 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$input = array_except(Input::all(), '_method');
 					if ($input['password'] == "") {
 						$input['password'] = $user->password;
 					} else {
 						$input['password'] = md5($input['password']);
 					}
-					$user->update($input);
-					return Redirect::route('user.index');
+
+					if (!$input['birthdate']) {
+						$input['birthdate'] = $user->birthdate;
+					}
+
+					$rules = array(
+						'name'=>'required',
+						'email'=>'required|email',
+						'password'=>'required',
+						'region'=>'required',
+						'motto'=>'required',
+						'profesi'=>'required',
+						'foto'=>'mimes:jpeg,jpg,bmp,png',
+						'birthdate'=>'required'	
+						);
+					$validator = Validator::make($input,$rules);
+					if($validator->fails()){
+						$title = 'Edit data User';
+						return view('admin.users.edit', compact('user', 'title'))->withErrors($validator->errors());
+						//return Redirect::to('/pengguna/my-profile/'.$user1['id'])->withInput()->withErrors($validator->errors());
+					} else {
+						$image = Input::file('foto');
+						if(isset($input['foto'])){
+							if($user->foto != 'default.gif'){
+								File::delete('public/assets/img/avatar/'.$user->foto);
+							}	
+							$filename  = rand(1111,9999).time() . '.' . $image->getClientOriginalExtension();
+							Input::file('foto')->move('public/assets/img/avatar/',$filename);
+							$input['foto'] = $filename;
+						}
+						$user->update($input);
+						return Redirect::route('user.index');
+					}
 				}
 			}else{
 				$title='E-recruito Login';
@@ -281,6 +348,13 @@ class UserController extends Controller {
 					return redirect('/pengguna');
 				} else {
 					$user = Users::find($id);
+					if (!$user) {
+						return Redirect::route('user.index');
+					}
+					if ($user->role == 1) {
+						return Redirect::route('user.index');
+					}
+
 					$user->delete();
 					return Redirect::route('user.index');
 				}

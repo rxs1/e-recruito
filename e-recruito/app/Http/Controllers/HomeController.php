@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Oprec;
+use Input, Redirect, File, Session,Validator, Response;	
 class HomeController extends Controller {
 
 
@@ -9,6 +11,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$title='Join Us E-Recruito: Recruit Online';
+		
 		return view('home',['title'=>$title]);
 	}
 	/**
@@ -47,7 +50,8 @@ class HomeController extends Controller {
 	{
 		$title='Dashboard User';
 		if(session()->get('isLogin')){
-			return view('user.user',['title'=>$title]);
+			$allOprec = Oprec::where('statuspublis',1)->get();
+			return view('user.user',['title'=>$title,'allOprec'=>$allOprec]);
 		}else{
 			return redirect('/');	
 		}
@@ -95,6 +99,20 @@ class HomeController extends Controller {
 			return view('admin.admin',['title'=>$title]);
 		}else{
 			return redirect('/');	
+		}
+	}
+
+	/**
+	 * confirmation oprec
+	 */
+	public function confirmOprec($idoprec) {
+		if (session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			$oprec = Oprec::find($idoprec);
+			$title = 'Confirm joining oprec';
+			return view('user.confirmation-join-oprec', compact('oprec', 'title','user'));
+		} else {
+			return redirect('/');
 		}
 	}
 }
