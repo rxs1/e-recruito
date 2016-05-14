@@ -11,7 +11,16 @@ function checkAnyInstanceByUserId( $id ){
 	}else{
 		return 0;
 	}
-} 
+}
+
+function checkAnyJoinedOprec($id) {
+	$joined = App\PendaftarOprec::where('iduser',$id)->get();
+	if (count($joined)) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
 
 ?>
 <nav class="navbar navbar-default">
@@ -32,6 +41,9 @@ function checkAnyInstanceByUserId( $id ){
 				<li ><a href="{{url('/pengguna')}}">Home</a></li>
 				@if(checkAnyInstanceByUserId($user['id']))
 				<li ><a href="{{url('/pengguna/instansi')}}"> My Instance</a></li>
+				@endif
+				@if(checkAnyJoinedOprec($user['id']))
+				<li><a href="{{url('pengguna/registered-oprec')}}">Registered Oprec</a></li>
 				@endif
 				<li><a href="{{url('/FAQ')}}">FAQ</a></li>
 				@else <!-- Kala user admin-->
