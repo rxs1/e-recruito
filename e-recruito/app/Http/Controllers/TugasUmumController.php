@@ -2,9 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use App\Oprec;
 use App\TugasUmum;
 use Input, Redirect, Validator;
+
 use Illuminate\Http\Request;
 
 class TugasUmumController extends Controller {
@@ -24,6 +26,8 @@ class TugasUmumController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+	
 	public function create($idinstansi,$idoprec)
 	{
 		if(session()->get('isLogin')){
@@ -35,6 +39,7 @@ class TugasUmumController extends Controller {
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);
 		}
+
 	}
 
 	/**
@@ -44,6 +49,7 @@ class TugasUmumController extends Controller {
 	 */
 	public function store()
 	{
+
 		if(session()->get('isLogin')){
 			$user = session()->get('isLogin');
 			$input = Input::all();
@@ -74,6 +80,7 @@ class TugasUmumController extends Controller {
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);
 		}
+
 	}
 
 	/**

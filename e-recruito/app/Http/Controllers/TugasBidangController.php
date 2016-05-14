@@ -2,10 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use App\Oprec;
 use App\Bidang;
 use App\TugasBidang;
 use Input, Redirect, Validator;
+
 use Illuminate\Http\Request;
 
 class TugasBidangController extends Controller {
@@ -25,6 +27,8 @@ class TugasBidangController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+	
 	public function create($idinstansi,$idoprec,$idfield)
 	{
 		if(session()->get('isLogin')){
@@ -37,6 +41,7 @@ class TugasBidangController extends Controller {
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);
 		}
+
 	}
 
 	/**
@@ -46,6 +51,7 @@ class TugasBidangController extends Controller {
 	 */
 	public function store()
 	{
+
 		if(session()->get('isLogin')){
 			$user = session()->get('isLogin');
 			$input = Input::all();
@@ -79,6 +85,7 @@ class TugasBidangController extends Controller {
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);
 		}
+
 	}
 
 	/**

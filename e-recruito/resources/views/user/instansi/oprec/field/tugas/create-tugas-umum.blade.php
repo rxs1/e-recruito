@@ -5,6 +5,7 @@
 </head>
 <body>
 	@include('nav')
+
 	<div class="container">
 		<div class="col-md-10 col-md-offset-1" style="border: 2px solid #eee ; margin-top:7%">
 
@@ -31,6 +32,7 @@
 		</div>
 		
 	</div>
+
 	@include('footer')
 </body>
 </html>

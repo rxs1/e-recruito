@@ -21,6 +21,8 @@ Route::get('/logout', 'UserController@logout');
 
 /*isLogin*/
 Route::get('/pengguna', 'HomeController@homeUser');
+Route::get('/pengguna/confirm-oprec/{idoprec}', 'HomeController@confirmOprec');
+Route::get('/pengguna/confirm-oprec/confirm/{iduser}/{idoprec}', 'PendaftarOprecController@joinOprec');
 Route::get('/pengguna/my-profile', 'HomeController@vProfile');
 Route::get('/pengguna/my-profile/{id}', 'HomeController@eProfile');
 /*instansi*/
@@ -28,6 +30,8 @@ Route::get('/pengguna/instansi', 'InstansiController@viewMyInstance');
 Route::get('/pengguna/instansi/delete/{id}', 'InstansiController@deleteInstance');
 Route::get('/pengguna/instansi/update/{id}', 'InstansiController@editInstance');
 Route::post('/pengguna/instansi/update/{id}', 'InstansiController@updateInstance');
+/*registered-oprec*/
+Route::get('/pengguna/registered-oprec','PendaftarOprecController@viewAllJoinedOprec');
 
 /*oprec*/
 Route::get('/pengguna/instansi/{idinstansi}/make/oprec', 'OprecController@create');
