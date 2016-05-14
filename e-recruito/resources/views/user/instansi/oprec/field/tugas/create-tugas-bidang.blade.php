@@ -18,12 +18,16 @@
 			@endif
 			<div class="form-group">
 				{!! Form::label('cp','Deskripsi', ['class'=>'col-md-6 control-label']) !!}
-				<textarea style="height:200px;" name="deskripsi" class="form-control">{{$tugabidang['deskripsi']}}</textarea>
+				<textarea style="height:200px;" name="deskripsi" class="form-control">
+					{{$tugasbidang['deskripsi']}}
+
+				</textarea>
 			</div>
 
 			<div class="col-md-4 col-md-offset-8">
 				{!! Form::hidden('idoprec',$idoprec) !!}
 				{!! Form::hidden('idinstansi',$idinstansi) !!}
+				{!! Form::hidden('idbidang',$idbidang) !!}
 				{!! Form::submit('SAVE', ['class'=>'btn btn-primary form-control']) !!}
 			</div>
 			{!! Form::close() !!}

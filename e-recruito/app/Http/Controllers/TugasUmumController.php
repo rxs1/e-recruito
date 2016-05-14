@@ -57,13 +57,16 @@ class TugasUmumController extends Controller {
 			if($validator->fails()){
 				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/create-common-task')->withInput()->withErrors($validator->errors());
 			}else{
-
-				
-				$bidang = TugasUmum::create([
-					'idoprec'=>$input['idoprec'],
-					'deskripsi'=>$input['deskripsi'],			
-					]);
-
+				$tugasumum = TugasUmum::where('idoprec',$input['idoprec'])->first();
+				if($tugasumum){
+					$tugasumum->deskripsi = $input['deskripsi'];
+					$tugasumum->save();
+				}else{
+					$bidang = TugasUmum::create([
+						'idoprec'=>$input['idoprec'],
+						'deskripsi'=>$input['deskripsi'],			
+						]);
+				}
 				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/allfield')->with('message','2');
 			}
 
