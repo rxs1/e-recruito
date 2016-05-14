@@ -86,6 +86,7 @@ class PendaftarOprecController extends Controller {
 		/**
 	 *	Adding user who join to an Open Recruitment
 	 */
+<<<<<<< HEAD
 
 	public function joinOprec($iduser, $idoprec) {
 		if(session()->get('isLogin')) {
@@ -98,9 +99,23 @@ class PendaftarOprecController extends Controller {
 			return Redirect::to('/pengguna/registered-oprec')->with('message','joined')->with('oprecName',$oprec->name);
 		} else {
 			return redirect('/');
-		}
-	}
+=======
+		public function joinOprec($iduser, $idoprec) {
+			if(session()->get('isLogin')) {
+				PendaftarOprec::create([
 
+					'iduser' => $iduser,
+					'idoprec' => $idoprec,
+					]);
+
+				return Redirect::to('/pengguna');
+			} else {
+				return redirect('/');
+			}
+>>>>>>> origin/Rifat
+		}
+
+<<<<<<< HEAD
 	public function viewAllJoinedOprec() {
 		if(session()->get('isLogin')) {
 			$user = session()->get('isLogin');
@@ -112,3 +127,6 @@ class PendaftarOprecController extends Controller {
 		}
 	}
 }
+=======
+	}
+>>>>>>> origin/Rifat
