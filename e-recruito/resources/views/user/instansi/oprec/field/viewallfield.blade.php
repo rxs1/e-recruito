@@ -8,11 +8,16 @@
 	<div class="container">
 		<h2>{{$title}}</h2>
 		<hr>
+		@if(session()->get('message') == 2)
+		<p class="alert alert-success"> Common Task was Saved</p>
+		@endif
 		<div class="col-md-12" style="margin-bottom: 2%">
-			<a  class="btn btn-primary pull-right" style="margin-left: 2%">Create Common Task </a><span></span><a href="{{url('pengguna/instansi/'.$idinstansi.'/alloprec')}}" class="btn btn-primary pull-right">Back To All Oprec </a>
+			<a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$idoprec.'/create-common-task')}}" class="btn btn-primary pull-right" style="margin-left: 2%">Describe Common Task </a><span></span><a href="{{url('pengguna/instansi/'.$idinstansi.'/alloprec')}}" class="btn btn-primary pull-right">Back To All Oprec </a>
 		</div>
 		
 		<div class="row">
+
+
 			@if(count($allField))
 			@foreach($allField as $list)
 			<div class="col-md-12" style="border: solid #eee 3px">
@@ -29,7 +34,7 @@
 					</div>
 				</div>
 				<div class="col-md-2">
-					<a class="btn btn-primary">Describe Field Task </a>
+					<a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$idoprec.'/field/'.$list->id.'/create-field-task')}}" class="btn btn-primary">Describe Field Task </a>
 				</div>
 			</div>
 			@endforeach
