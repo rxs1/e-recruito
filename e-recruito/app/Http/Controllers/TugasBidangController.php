@@ -2,7 +2,14 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 
+=======
+use App\Oprec;
+use App\Bidang;
+use App\TugasBidang;
+use Input, Redirect, Validator;
+>>>>>>> saufi
 use Illuminate\Http\Request;
 
 class TugasBidangController extends Controller {
@@ -22,9 +29,24 @@ class TugasBidangController extends Controller {
 	 *
 	 * @return Response
 	 */
+<<<<<<< HEAD
 	public function create()
 	{
 		//
+=======
+	public function create($idinstansi,$idoprec,$idfield)
+	{
+		if(session()->get('isLogin')){
+			$title = 'Create Common Task';
+			$oprec = Oprec::where('id',$idoprec)->first();
+			$bidang = Bidang::where('id',$idfield)->first();
+			$tugasbidang = TugasBidang::where('idoprec',$idoprec)->where('idbidang',$idfield)->first();
+			return view('user.instansi.oprec.field.tugas.create-tugas-bidang',['title'=>$title,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec,'oprec'=>$oprec,'tugasbidang'=>$tugasbidang,'bidang'=>$bidang,'idbidang'=>$idfield]); 
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
+>>>>>>> saufi
 	}
 
 	/**
@@ -34,7 +56,43 @@ class TugasBidangController extends Controller {
 	 */
 	public function store()
 	{
+<<<<<<< HEAD
 		//
+=======
+		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');
+			$input = Input::all();
+			$rules = array(
+
+				'deskripsi' =>'required', 
+
+				);
+			
+			$validator = Validator::make($input,$rules);
+			if($validator->fails()){
+				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/create-common-task')->withInput()->withErrors($validator->errors());
+			}else{
+				$tugasbidang = TugasBidang::where('idoprec',$input['idoprec'])->where('idbidang',$input['idbidang'])->first();
+				if($tugasbidang){
+					$tugasbidang->deskripsi = $input['deskripsi'];
+					$tugasbidang->save();
+				}else{
+					$bidang = TugasBidang::create([
+						'idoprec'=>$input['idoprec'],
+						'idbidang'=>$input['idbidang'],
+						'deskripsi'=>$input['deskripsi'],			
+						]);
+				}	
+				$bidang = Bidang::where('id',$input['idbidang'])->first();
+				return Redirect::to('/pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/allfield')->with('message','3')->with('namefield',$bidang->name);
+				
+			}
+
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
+>>>>>>> saufi
 	}
 
 	/**

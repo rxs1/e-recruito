@@ -48,8 +48,8 @@ Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/allfield', 'BidangCo
 /*PendaftarOPrec*/
 
 /*Tugas*/
-Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/commontask', 'BidangController@viewAllField');
-Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idtugas}/fieldtask', 'BidangController@viewAllField');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/create-common-task', 'TugasUmumController@create');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/create-field-task', 'TugasBidangController@create');
 
 
 /*---------------------------------------------------*/
@@ -66,6 +66,8 @@ Route::resource('instansi', 'InstansiController');
 Route::resource('user', 'UserController');
 Route::resource('oprec', 'OprecController');
 Route::resource('bidang', 'BidangController');
+Route::resource('tugas-umum', 'TugasUmumController');
+Route::resource('tugas-bidang', 'TugasBidangController');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
