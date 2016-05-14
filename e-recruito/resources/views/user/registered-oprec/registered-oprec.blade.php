@@ -32,9 +32,8 @@
 							<p>Days to deadline: <?php $deadline = new DateTime($oprec->deadline); 
 							$today = new DateTime(date("Y-m-d"));
 							$interval = $deadline->diff($today);
-							$interval = $today->diff($deadline);
 							$days = $interval->format('%a');
-							if($days <= 0) {$days = 0;} 
+							if(strtotime(date("Y-m-d")) > strtotime($oprec->deadline)) {$days = 0;} 
 							echo $days." ";?></p>
 							<a href="#">View Task</a>
 						</div>
