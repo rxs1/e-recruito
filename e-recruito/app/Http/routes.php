@@ -30,6 +30,8 @@ Route::get('/pengguna/instansi', 'InstansiController@viewMyInstance');
 Route::get('/pengguna/instansi/delete/{id}', 'InstansiController@deleteInstance');
 Route::get('/pengguna/instansi/update/{id}', 'InstansiController@editInstance');
 Route::post('/pengguna/instansi/update/{id}', 'InstansiController@updateInstance');
+/*registered-oprec*/
+Route::get('/pengguna/registered-oprec','PendaftarOprecController@viewAllJoinedOprec');
 
 /*oprec*/
 Route::get('/pengguna/instansi/{idinstansi}/make/oprec', 'OprecController@create');

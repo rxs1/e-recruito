@@ -91,12 +91,24 @@ class PendaftarOprecController extends Controller {
 	 */
 	public function joinOprec($iduser, $idoprec) {
 		if(session()->get('isLogin')) {
+			$oprec = Oprec::where('id',$idoprec)->first();
 			PendaftarOprec::create([
 				'iduser' => $iduser,
 				'idoprec' => $idoprec,
 			]);
 			
-			return Redirect::to('/pengguna');
+			return Redirect::to('/pengguna/registered-oprec')->with('message','joined')->with('oprecName',$oprec->name);
+		} else {
+			return redirect('/');
+		}
+	}
+
+	public function viewAllJoinedOprec() {
+		if(session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			$title = 'Registered Oprec';
+			$allJoined = PendaftarOprec::where('iduser',$user->id)->get();
+			return view('user.registered-oprec.registered-oprec', compact('title','allJoined'));
 		} else {
 			return redirect('/');
 		}
