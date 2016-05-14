@@ -101,4 +101,18 @@ class HomeController extends Controller {
 			return redirect('/');	
 		}
 	}
+
+	/**
+	 * confirmation oprec
+	 */
+	public function confirmOprec($idoprec) {
+		if (session()->get('isLogin')) {
+			$user = session()->get('isLogin');
+			$oprec = Oprec::find($idoprec);
+			$title = 'Confirm joining oprec';
+			return view('user.confirmation-join-oprec', compact('oprec', 'title','user'));
+		} else {
+			return redirect('/');
+		}
+	}
 }

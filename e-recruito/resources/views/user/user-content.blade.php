@@ -15,7 +15,7 @@
 					<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
 					<h3>{{$list['name']}}</h3>
 					<p></p>
-					<a class="btn btn-success">Join</a> <a href="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" class="btn btn-default">View Brosur</a> <a href="{{url('oprec/'.$list->id)}}" class="btn btn-warning">View Oprec</a>
+					<a class="btn btn-success" href="{{url('/pengguna/confirm-oprec/'.$list['id'])}}">Join</a> <a href="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" class="btn btn-default">View Brosur</a> <a href="{{url('oprec/'.$list->id)}}" class="btn btn-warning">View Oprec</a>
 				</div>
 				@endforeach
 				@else

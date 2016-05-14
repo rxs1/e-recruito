@@ -2,8 +2,13 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Input, Redirect, File, Session,Validator, Response;	
 use Illuminate\Http\Request;
+use App\PendaftarOprec;
+
+
+
+
 
 class PendaftarOprecController extends Controller {
 
@@ -79,6 +84,22 @@ class PendaftarOprecController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+	/**
+	 *	Adding user who join to an Open Recruitment
+	 */
+	public function joinOprec($iduser, $idoprec) {
+		if(session()->get('isLogin')) {
+			PendaftarOprec::create([
+				'iduser' => $iduser,
+				'idoprec' => $idoprec,
+			]);
+			
+			return Redirect::to('/pengguna');
+		} else {
+			return redirect('/');
+		}
 	}
 
 }

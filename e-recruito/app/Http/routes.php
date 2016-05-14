@@ -21,6 +21,8 @@ Route::get('/logout', 'UserController@logout');
 
 /*isLogin*/
 Route::get('/pengguna', 'HomeController@homeUser');
+Route::get('/pengguna/confirm-oprec/{idoprec}', 'HomeController@confirmOprec');
+Route::get('/pengguna/confirm-oprec/confirm/{iduser}/{idoprec}', 'PendaftarOprecController@joinOprec');
 Route::get('/pengguna/my-profile', 'HomeController@vProfile');
 Route::get('/pengguna/my-profile/{id}', 'HomeController@eProfile');
 /*instansi*/

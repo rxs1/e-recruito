@@ -2,12 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Instansi;
 use App\Oprec;
 use App\Bidang;
 use Input, Redirect, File, Session,Validator, Response;	
+
 class OprecController extends Controller {
 
 	/**
