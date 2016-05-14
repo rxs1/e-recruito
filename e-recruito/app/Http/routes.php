@@ -75,6 +75,6 @@ Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDow
 Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');
 Route::get('/instansi/status/ignore/{id}', 'InstansiController@ignoreInstance');
 
-Route::get('user/profile', [
+/*Route::get('user/profile', [
 	'as' => 'profile.name', 'uses' => 'BidangController@create'
-	]);
+	]);*/
