@@ -20,18 +20,16 @@
 				</div>
 				@if(count($allOprec))
 				@foreach($allOprec as $list)
-				<div class="col-md-4" style="margin-bottom: 3%">
-					<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
-					<h3>{{$list['name']}}</h3>
-					<p></p>
-					@if(hasJoined($list['id']))
-						<a href="#" class="btn btn-success" disabled="disabled">Joined</a>
-					@else
+				@if(!hasJoined($list['id']))
+					<div class="col-md-4" style="margin-bottom: 3%">
+						<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
+						<h3>{{$list['name']}}</h3>
+						<p></p>
 						<a class="btn btn-success" href="{{url('/pengguna/confirm-oprec/'.$list['id'])}}">Join</a> 
-					@endif
-					<a href="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" class="btn btn-default">View Brosur</a> <a href="{{url('oprec/'.$list->id)}}" class="btn btn-warning">View Oprec</a>
-						
-				</div>
+						<a href="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" class="btn btn-default">View Brosur</a> <a href="{{url('oprec/'.$list->id)}}" class="btn btn-warning">View Oprec</a>
+							
+					</div>
+				@endif
 				@endforeach
 				@else
 				<div class="alert alert-danger">Doesnt Have Any Publish Open Recruitment</div>
