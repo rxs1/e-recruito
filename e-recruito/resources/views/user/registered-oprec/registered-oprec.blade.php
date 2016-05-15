@@ -26,7 +26,7 @@
 						<hr>
 						<div class="row">
 							@if(session()->get('message') == 'joined')
-							<h5 class="aler alert-success">Congratulation! You are successfully registered on: {{session()->get('oprecName')}}</h5>
+							<h5  class="alert alert-success">Congratulation! You are successfully registered on: {{session()->get('oprecName')}}</h5>
 							@endif
 						</div>
 					</div>
