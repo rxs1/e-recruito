@@ -51,6 +51,9 @@ Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/allfield', 'BidangCo
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/create-common-task', 'TugasUmumController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/create-field-task', 'TugasBidangController@create');
 
+/*Choose field*/
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/choose-field', 'PendaftarBidangController@chooseField');
+Route::post('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/choose-field', 'PendaftarBidangController@choosedField');
 
 /*---------------------------------------------------*/
 /*POST USER*/
@@ -71,7 +74,6 @@ Route::resource('tugas-bidang', 'TugasBidangController');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
-
 
 Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDownloadProve');
 Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');

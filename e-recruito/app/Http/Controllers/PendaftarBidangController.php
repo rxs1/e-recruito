@@ -2,9 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Bidang;
+use App\Oprec;
+use App\Instansi;
 use Illuminate\Http\Request;
-
+use App\PendaftarBidang;
+use Input, Redirect, File, Session,Validator, Response;
 class PendaftarBidangController extends Controller {
 
 	/**
@@ -80,5 +83,47 @@ class PendaftarBidangController extends Controller {
 	{
 		//
 	}
+
+	public function chooseField($idinstansi,$idoprec){
+
+
+		if(session()->get('isLogin')) {
+
+			$oprec = Oprec::where('id',$idoprec)->first();
+			$instansi=Instansi::where('id',$idinstansi)->first();
+			$allbidang = Bidang::where('idoprec',$idoprec)->get();
+			$title = 'Choose field on Open Recruiment '.$oprec->name; 
+			return view('user.registered-oprec.field.choose',['title'=>$title,'oprec'=>$oprec,'instansi'=>$instansi,'allbidang'=>$allbidang,'idoprec'=>$idoprec,'idinstansi'=>$idinstansi]);
+		} else {
+			return redirect('/');
+
+
+		}
+	}
+
+	public function choosedField($idinstansi,$idoprec){
+
+
+		if(session()->get('isLogin')) {
+			$input = Input::all();
+			$oprec = Oprec::where('id',$input['idoprec'])->first();
+			$instansi=Instansi::where('id',$input['idinstansi'])->first();
+
+			if(count(Input::get('choose')) <= $oprec['max-field-person']){
+				echo 'pas lah';
+				
+			}else{
+
+				echo 'berlebihan';
+			}
+
+		} else {
+			return redirect('/');
+
+
+		}
+	}
+
+
 
 }

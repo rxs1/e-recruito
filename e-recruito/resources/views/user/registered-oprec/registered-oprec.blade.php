@@ -38,7 +38,7 @@
 						@if(count(chosenField($user->id, $oprec->id)))
 
 						@else
-						You have not chosen any field yet. Choose <a href="{{url('/pengguna')}}">here</a>
+						You have not chosen any field yet. Choose <a href="{{url('/pengguna/instansi/'.getOprecById($join->idoprec)->idinstansi.'/oprec/'.$join->idoprec.'/choose-field')}}">here</a>
 						@endif
 						<p>Days to deadline: <?php $deadline = new DateTime($oprec->deadline); 
 							$today = new DateTime(date("Y-m-d"));
@@ -46,7 +46,8 @@
 							$days = $interval->format('%a');
 							if(strtotime(date("Y-m-d")) > strtotime($oprec->deadline)) {$days = 0;} 
 							echo $days." ";?></p>
-							<a href="#">View Task</a>
+							<a href="#">View Task </a>|
+							<a href="{{url('oprec/'.$join->idoprec)}}"> View Oprec</a>
 						</div>
 						@endforeach
 						@else
