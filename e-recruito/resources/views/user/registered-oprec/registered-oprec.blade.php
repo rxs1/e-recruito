@@ -33,12 +33,12 @@
 					@if(count($allJoined))
 					@foreach($allJoined as $join)
 					<div class="col-md-4" style="margin-bottom:3%">
-						<img src="{{url('public/assests/img/brosur-oprec/'.$join['brosur'])}}" height="200" width="100%">
+						<img src="{{url('public/assets/img/brosur-oprec/'.getOprecById($join->idoprec)->brosur)}}" height="200" width="100%">
 						<h3><?php $oprec = getOprecById($join->idoprec); echo $oprec->name ?></h3>
 						@if(count(chosenField($user->id, $oprec->id)))
-							
+
 						@else
-							You have not chosen any field yet. Choose <a href="{{url('/pengguna')}}">here</a>
+						You have not chosen any field yet. Choose <a href="{{url('/pengguna')}}">here</a>
 						@endif
 						<p>Days to deadline: <?php $deadline = new DateTime($oprec->deadline); 
 							$today = new DateTime(date("Y-m-d"));
