@@ -110,6 +110,8 @@ class PendaftarOprecController extends Controller {
 				$user = session()->get('isLogin');
 				$title = 'Registered Oprec';
 				$allJoined = PendaftarOprec::where('iduser',$user->id)->get();
+				
+				
 				return view('user.registered-oprec.registered-oprec', compact('title','allJoined'));
 			} else {
 				return redirect('/');

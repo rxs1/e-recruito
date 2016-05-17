@@ -88,7 +88,7 @@ class PendaftarBidangController extends Controller {
 
 
 		if(session()->get('isLogin')) {
-
+			$user = session()->get('isLogin');	
 			$oprec = Oprec::where('id',$idoprec)->first();
 			$instansi=Instansi::where('id',$idinstansi)->first();
 			$allbidang = Bidang::where('idoprec',$idoprec)->get();
@@ -101,20 +101,33 @@ class PendaftarBidangController extends Controller {
 		}
 	}
 
-	public function choosedField($idinstansi,$idoprec){
+	public function choosedField(){
 
 
 		if(session()->get('isLogin')) {
 			$input = Input::all();
+			$user = session()->get('isLogin');
 			$oprec = Oprec::where('id',$input['idoprec'])->first();
 			$instansi=Instansi::where('id',$input['idinstansi'])->first();
-
+			if(count(Input::get('choose')) == 0){
+				return Redirect::to('pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/choose-field')->with('message','-1');
+			}
 			if(count(Input::get('choose')) <= $oprec['max-field-person']){
-				echo 'pas lah';
-				
+				$i=0;
+				$choose = Input::get('choose');
+
+				while($i < count(Input::get('choose'))){
+					PendaftarBidang::create([
+						'iduser'=> $user->id,
+						'idbidang'=>$choose[$i],
+						'idoprec'=>$input['idoprec'],
+						]);
+					$i++;
+				}
+				return Redirect::to('pengguna/registered-oprec')->with('message','1')->with('oprec',$oprec);
 			}else{
 
-				echo 'berlebihan';
+				return Redirect::to('pengguna/instansi/'.$input['idinstansi'].'/oprec/'.$input['idoprec'].'/choose-field')->with('message','-2');
 			}
 
 		} else {

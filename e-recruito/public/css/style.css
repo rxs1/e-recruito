@@ -1,0 +1,9 @@
+h3 a{
+	color:#1a1a00;
+	font-weight: bold;
+}
+h3 a:hover{
+	color:#666	;
+	font-weight: bold;
+	text-decoration: none;
+}

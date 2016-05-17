@@ -15,6 +15,8 @@
 <meta name="google" content="notranslate" />
 
 <link href="{{ asset('/public/assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('/public/css/style.css') }}" rel="stylesheet">
 <script src="{{ asset('/public/assets/jquery/jquery-2.1.4.js') }}"></script>
+
 <script src="{{ asset('/public/assets/bootstrap/js/bootstrap.js') }}"></script>
 <title>{{ $title }} </title>
