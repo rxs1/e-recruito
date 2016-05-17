@@ -96,8 +96,6 @@ class PendaftarBidangController extends Controller {
 			return view('user.registered-oprec.field.choose',['title'=>$title,'oprec'=>$oprec,'instansi'=>$instansi,'allbidang'=>$allbidang,'idoprec'=>$idoprec,'idinstansi'=>$idinstansi]);
 		} else {
 			return redirect('/');
-
-
 		}
 	}
 

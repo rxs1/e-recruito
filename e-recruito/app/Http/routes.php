@@ -30,7 +30,7 @@ Route::get('/pengguna/instansi', 'InstansiController@viewMyInstance');
 Route::get('/pengguna/instansi/delete/{id}', 'InstansiController@deleteInstance');
 Route::get('/pengguna/instansi/update/{id}', 'InstansiController@editInstance');
 Route::post('/pengguna/instansi/update/{id}', 'InstansiController@updateInstance');
-/*registered-oprec*/
+/*h3tered-oprec*/
 Route::get('/pengguna/registered-oprec','PendaftarOprecController@viewAllJoinedOprec');
 
 /*oprec*/
@@ -50,6 +50,8 @@ Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/allfield', 'BidangCo
 /*Tugas*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/create-common-task', 'TugasUmumController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/create-field-task', 'TugasBidangController@create');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
+Route::post('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
 
 /*Choose field*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/choose-field', 'PendaftarBidangController@chooseField');
