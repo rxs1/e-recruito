@@ -223,4 +223,17 @@ class OprecController extends Controller {
 		}
 	}
 
+	public function search()
+	{
+   	// Gets the query string from our form submission 
+		$search =Input::get('search');
+    // Returns an array of articles that have the query string located somewhere within 
+    // our articles titles. Paginates them so we can break up lots of search results.
+		$oprec = Oprec::where('name', 'LIKE', '%' . $search . '%')->get();
+		$title = 'Search Result For '.$search;
+	// returns a view and passes the view the list of articles and the original query.
+		return view('user.instansi.oprec.result-oprec', compact('oprec', 'search','title'));
+	}
+
+
 }

@@ -11,6 +11,8 @@
 				<h2>{{$title}}</h2>
 
 				<hr>
+
+				@if(count($allbidang))
 				<p class="alert alert-warning col-md-3 pull-right text-center"><b>You can choose max {{$oprec['max-field-person'] }} field</b></p>
 				@if(session()->get('message') == -1)
 
@@ -63,9 +65,15 @@
 				{!!Form::submit('Submit',['class'=>'btn btn-primary text-center','onclick'=>'return confirm("Are you sure? When You Submit this you cant unjoin and unchoice field")'])!!}
 			</div>
 			
-			{!! Form::close() !!}		
+			{!! Form::close() !!}	
+			@else
+			<div  style="padding:15%">
+				<p class="col-md-12 alert alert-danger">Sorry This Open Recruitment Still not have field | <a  class="btn btn-warning" onClick='history.go(-1);' style="margin-right: 2%">BACK NOW</a></p>
+			</div>
 		</div>
+		@endif
 	</div>
-	@include('footer')
+</div>
+@include('footer')
 </body>
 </html>

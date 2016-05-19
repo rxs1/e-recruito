@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	@include('head')
 </head>
 <body>
@@ -65,6 +66,7 @@
 					</div>
 				</div>
 				<div class="col-md-2">
+					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/registrantfield')}}"  class="btn btn-primary form-control"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Registrant</a></p>
 					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/allfield')}}"  class="btn btn-primary form-control">View All Field</a></p>
 					<p><a href="{{url('/unpublish/'.$idinstansi.'/'.$list->id)}}"  class="btn btn-danger form-control">Unpublish</a></p>
 
@@ -102,6 +104,7 @@
 					</div>
 				</div>
 				<div class="col-md-2">
+					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/registrantfield')}}"  class="btn btn-primary form-control"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Registrant</a></p>
 					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/allfield')}}"  class="btn btn-primary form-control">View All Field</a></p>
 					<p><a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$list->id.'/make/field')}}" class="btn btn-primary form-control">Add New Field</a></p>
 					<p><a class="btn btn-primary form-control" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Publish</a></p>
