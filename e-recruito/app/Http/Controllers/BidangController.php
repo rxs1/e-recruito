@@ -3,7 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Bidang;
-
+use App\Instansi;
+use App\PendaftarBidang;
+use App\Oprec;
 use Illuminate\Http\Request;
 use Input, Redirect, File, Session,Validator, Response;	
 class BidangController extends Controller {
@@ -127,5 +129,34 @@ class BidangController extends Controller {
 			return Redirect::to('/login')->with('title',$title);
 		}
 	}
+
+	public function registrantField($idinstansi,$idoprec)
+	{
+		if(session()->get('isLogin')){
+			$allField = Bidang::where('idoprec',$idoprec)->get();
+			return view('user.instansi.oprec.field.registrant.registrantfield',['title'=>'All Field And Registrant','allField'=>$allField,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec ]);
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
+	}
+	
+	public function viewAllRegistrant($idinstansi,$idoprec,$idfield)
+	{
+		if(session()->get('isLogin')){
+			$instansi = Instansi::where('id',$idinstansi)->first();
+			$oprec = Oprec::where('id',$idoprec)->first();
+			$bidang = Bidang::where('id',$idfield)->first();
+			$pendaftarBidang = PendaftarBidang::where('idbidang',$idfield)->get();
+			return view('user.instansi.oprec.field.registrant.allregistrant',['title'=>'Registrant :'.$instansi->name.'>'.$oprec->name.'>'.$bidang->name,'bidang'=>$bidang,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec,'pendaftarBidang'=>$pendaftarBidang ]);
+		}else{
+			$title='E-recruito Login';
+			return Redirect::to('/login')->with('title',$title);
+		}
+	}
+
+
+	
+
 
 }

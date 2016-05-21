@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/signup', 'HomeController@signup');
 Route::get('/login', 'HomeController@login');
+Route::get('/view/user/{id}', 'UserController@viewUser');
 /*---------------------------------------------------*/
 /*GET USER*/
 Route::get('/logout', 'UserController@logout');
@@ -30,7 +31,7 @@ Route::get('/pengguna/instansi', 'InstansiController@viewMyInstance');
 Route::get('/pengguna/instansi/delete/{id}', 'InstansiController@deleteInstance');
 Route::get('/pengguna/instansi/update/{id}', 'InstansiController@editInstance');
 Route::post('/pengguna/instansi/update/{id}', 'InstansiController@updateInstance');
-/*registered-oprec*/
+/*h3tered-oprec*/
 Route::get('/pengguna/registered-oprec','PendaftarOprecController@viewAllJoinedOprec');
 
 /*oprec*/
@@ -44,12 +45,15 @@ Route::get('/oprec/edit/{id}', 'OprecController@edit');
 /*bidang*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/make/field', 'BidangController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/allfield', 'BidangController@viewAllField');
-
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/registrantfield', 'BidangController@registrantField');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/allregistrant', 'BidangController@viewAllRegistrant');
 /*PendaftarOPrec*/
 
 /*Tugas*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/create-common-task', 'TugasUmumController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/create-field-task', 'TugasBidangController@create');
+Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
+Route::post('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
 
 /*Choose field*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/choose-field', 'PendaftarBidangController@chooseField');
@@ -71,6 +75,7 @@ Route::resource('oprec', 'OprecController');
 Route::resource('bidang', 'BidangController');
 Route::resource('tugas-umum', 'TugasUmumController');
 Route::resource('tugas-bidang', 'TugasBidangController');
+Route::resource('queries', 'QueryController');
 /*---------------------------------------------------*/
 /*ADMIN THINGS*/
 Route::get('/admin', 'HomeController@homeAdmin');
@@ -79,6 +84,7 @@ Route::get('/file-server/file-prove-instansi/{file}', 'InstansiController@getDow
 Route::get('/instansi/status/accept/{id}', 'InstansiController@acceptInstance');
 Route::get('/instansi/status/ignore/{id}', 'InstansiController@ignoreInstance');
 
+Route::post('/pengguna', 'OprecController@search');
 /*Route::get('user/profile', [
 	'as' => 'profile.name', 'uses' => 'BidangController@create'
 	]);*/

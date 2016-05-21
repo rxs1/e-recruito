@@ -57,7 +57,7 @@
 						
 						<?php $allRegisteredBidang =getAllRegisteredBidangByIdOprec($join->idoprec);?>
 						<p>You've Choose field:</p>
-						<p><a href="#" class="btn btn-default pull-right"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> All Task </a></p>
+						<p><a href="{{url('/pengguna/instansi/'.$oprec->idinstansi.'/oprec/'.$join->idoprec.'/yourTask')}}" class="btn btn-default pull-right"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> All Task </a></p>
 						<ul>
 							@foreach($allRegisteredBidang as $list)
 							<p>

@@ -35,7 +35,6 @@ class UserController extends Controller {
 		$input = Input::all();
 		$rules = array(
 			'name' =>'required', 
-			
 			'email' =>'required|unique:users,email', 
 			'password' =>'required|min:8', 
 			'repassword' =>'required|same:password'
@@ -148,6 +147,16 @@ class UserController extends Controller {
 				return Redirect::to('/login')->with('title',$title);
 			}
 		}
+
+		public function viewUser($id)
+		{
+			$user = Users::where('id',$id)->first();
+			$title = 'User  '.$user->name;
+			return view('user.view', compact('user','title'));
+			
+		}
+
+
 
 		/**
 	 * Show the form for editing the specified resource.

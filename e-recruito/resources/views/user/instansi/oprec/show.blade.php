@@ -31,6 +31,7 @@
 				<div class="col-md-12" style="border:solid #eee 1px;margin-bottom: 3%">
 					<h3>Field Open</h3>
 					<hr>
+					@if(count($field))
 					@foreach($field as $list)
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -40,6 +41,9 @@
 						</div>
 					</div>
 					@endforeach
+					@else
+					<p class="col-md-12 alert alert-danger">Sorry This Open Recruitment Still not have field </p>		
+					@endif
 				</div>
 				<div class="col-md-12" style="margin-bottom: 3%">
 					<input type='button' class="btn btn-warning" VALUE='Back' onClick='history.go(-1);' style="margin-right: 2%"><a class="btn btn-success">Join Us</a>

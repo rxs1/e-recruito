@@ -8,6 +8,7 @@
 	<div class="container">
 		<h2>{{$title}}</h2>
 		<hr>
+
 		@if(session()->get('message') == 2)
 		<p class="alert alert-success"> Common Task was Saved</p>
 		@endif
@@ -15,7 +16,7 @@
 		<p class="alert alert-success"> Field "{{session()->get('namefield')}}" Task was Saved</p>
 		@endif
 		<div class="col-md-12" style="margin-bottom: 2%">
-			<a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$idoprec.'/create-common-task')}}" class="btn btn-primary pull-right" style="margin-left: 2%">Describe Common Task </a><span></span><a href="{{url('pengguna/instansi/'.$idinstansi.'/alloprec')}}" class="btn btn-primary pull-right">Back To All Oprec </a>
+			<a href="{{url('/pengguna/instansi/'.$idinstansi.'/oprec/'.$idoprec.'/create-common-task')}}" class="btn btn-primary pull-right" style="margin-left: 2%">Describe Common Task </a><span></span><a href="{{url('pengguna/instansi/'.$idinstansi.'/alloprec')}}" class="btn btn-warning pull-right">Back To All Oprec </a>
 		</div>
 		
 		<div class="row">

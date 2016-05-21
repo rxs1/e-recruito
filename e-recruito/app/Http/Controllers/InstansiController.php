@@ -201,12 +201,15 @@ class InstansiController extends Controller {
 				$instansi = Instansi::find($input['id']);
 				$instansi->email = $input['email'];
 				$instansi->deskripsi = $input['deskripsi'];
-				if(isset($Input['foto'])){
+				if(isset($input['foto'])){
 					$image = Input::file('foto');
+
 					File::delete('public/assets/img/logo-instansi/'.$instansi->foto);
 					$filename  = rand(1111,9999).time() . '.' . $image->getClientOriginalExtension();
 					Input::file('foto')->move('public/assets/img/logo-instansi/',$filename);
+					
 					$instansi->foto = $filename;
+
 				}
 
 				$instansi->save();
