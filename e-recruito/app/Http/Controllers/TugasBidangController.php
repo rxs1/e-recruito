@@ -132,4 +132,9 @@ class TugasBidangController extends Controller {
 		//
 	}
 
+	public function getDownloadFieldTask($file) {
+		$file_download = url().'/file-server/slot-tugas-bidang/'.$file;
+		return Response::download($file_download);
+	}
+
 }

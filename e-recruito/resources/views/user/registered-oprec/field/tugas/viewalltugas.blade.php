@@ -2,6 +2,14 @@
 <html>
 <head>
 	@include('head')
+	<?php $not_yet = true;
+		$not_yet2 = true; ?>
+	<?php
+	function getTugasBidang($idbidang) {
+		$tugasBidang = App\TugasBidang::where('idbidang',$idbidang)->first();
+		return $tugasBidang;
+	}
+	?>
 </head>
 <body>
 	@include('nav')
@@ -17,9 +25,27 @@
 			<br>
 			
 		</div>
-		{!!Form::open(array('action'=>'TugasController@userTask','files'=>true))!!}
+		@foreach($errors->all() as $error)
+			<?php $msg = 'At least one field is required';
+				if ($error == $msg) {
+					if ($not_yet) {
+						$not_yet = false;
+						echo '<span class="alert alert-danger">'.$error.'</span>';
+					}
+				} else {
+					if ($not_yet2) {
+						$not_yet2 = false;
+						echo '<span class="alert alert-danger">'.$error.'</span>';
+					}
+				} ?>
+		@endforeach
+		@if(session()->get('uploaded') == '1')
+			<span class="alert alert-success">File has been saved</span>
+		@endif
+		
+		{!!Form::open(array('action'=>'TugasController@uploadUserTask','files'=>true))!!}
 		<div class="col-md-12">
-			<div class="col-md-12" style="padding:2%;margin-bottom:2%;border:#eee solid 1px;">
+			<div class="col-md-12" style="padding:2%;margin-bottom:2%;margin-top:2%border:#eee solid 1px;">
 
 				<div class="col-md-9">
 
@@ -44,7 +70,8 @@
 				<div class="col-md-9">
 					<h3>Task : {{$list->name}}</h3>
 					<hr>
-					<p>{{$list->deskripsi}}</p>
+					<?php $tgs = getTugasBidang($list->id); ?>
+					<p>{{$tgs->deskripsi}}</p>
 				</div>
 				<div class="col-md-3" style="padding:4%;">
 					{!! Form::label($list->idbidang,'Upload Task(.zip/.rar)') !!}
@@ -53,8 +80,9 @@
 
 			</div>
 			@endforeach
-
-			{!!Form::submit('UPLOAD DOCUMENT',['class'=>'btn btn-lg btn-primary text-center col-md-3 pull-right','onclick'=>'return confirm("Are you sure? When You Submit this you cant unjoin and unchoice field")'])!!}
+			{!! Form::hidden('idinstansi',$idinstansi) !!}
+			{!! Form::hidden('idoprec',$idoprec) !!}
+			{!!Form::submit('UPLOAD DOCUMENT',['class'=>'btn btn-lg btn-primary text-center col-md-3 pull-right','onclick'=>'return confirm("Are you sure to upload this document?")'])!!}
 			@else
 			<div class="col-md-12">
 				<p class="alert alert-danger">The Field task of this Open Recruitment still not define</p>

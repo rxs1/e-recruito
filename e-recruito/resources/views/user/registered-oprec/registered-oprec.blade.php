@@ -46,9 +46,14 @@
 						</div>
 					</div>
 					@if(count($allJoined))
+
+					<?php $idx = 0; ?>
 					@foreach($allJoined as $join)
+					@if($idx % 3 == 0)
+						<div class="row">
+					@endif
 					<div class="col-md-4" style="margin-bottom:3%;border: 2px solid #eee; padding:2%;">
-						<img src="{{url('public/asse	ts/img/brosur-oprec/'.getOprecById($join->idoprec)->brosur)}}" height="200" width="100%">
+						<img src="{{url('public/assets/img/brosur-oprec/'.getOprecById($join->idoprec)->brosur)}}" height="200" width="100%">
 						<h3><a href="{{url('oprec/'.$join->idoprec)}}"><?php $oprec = getOprecById($join->idoprec); echo $oprec->name ?></a></h3>
 						@if(count(chosenField($user->id, $oprec->id)))
 						<div class="col-md-12">
@@ -74,19 +79,22 @@
 						@else
 						You have not chosen any field yet. Choose <a href="{{url('/pengguna/instansi/'.getOprecById($join->idoprec)->idinstansi.'/oprec/'.$join->idoprec.'/choose-field')}}">here</a>
 						@endif
-						<p>Days to deadline: <?php $deadline = new DateTime($oprec->deadline); 
+						<p><?php $deadline = new DateTime($oprec->deadline); 
 							$today = new DateTime(date("Y-m-d"));
 							$interval = $deadline->diff($today);
 							$days = $interval->format('%a');
-							if(strtotime(date("Y-m-d")) > strtotime($oprec->deadline)) {$days = 0;} 
-							echo $days."";?></p>
+							if(strtotime(date("Y-m-d")) > strtotime($oprec->deadline)) {echo "Expired";} 
+							else {echo "Days to deadline: ".$days; } ?></p>
 							<a href="{{url('oprec/'.$join->idoprec)}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Open Recruitment</a>
 						</div>
-
-						@endforeach
-						@else
-						<div class="aler alert-danger">Doesn't Have any registered Open Recruitment</div>
-						@endif
+					@if($idx % 3 == 2) 
+						</div>
+					@endif
+					<?php $idx += 1; ?>
+					@endforeach
+					@else
+						<div class="alert alert-danger">Doesn't Have any registered Open Recruitment</div>
+					@endif
 					</div>
 				</div>
 			</div>

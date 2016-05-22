@@ -1,7 +1,7 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<<?php 
+		<?php 
 		$user = session()->get('isLogin');
 
 		function getUserById($iduser){
@@ -47,38 +47,52 @@
 								<tr>
 									<th class="text-center">No</th>
 									<th class="text-center">Name</th>
+									@if(!$isLowlyUser)
 									<th class="text-center">Email</th>
 									<th class="text-center">Field Task</th>
 									<th class="text-center">Common Task</th>
+									@endif
 
 								</tr>
 							</thead>
 							<tbody>
 								<?php $i=1?>
-								@foreach($pendaftarBidang as $list)
-								<tr>
-									<td>{{$i}}</td>
-									<td><a href="{{url('/view/user/'.$list->iduser)}}">{{getUserById($list->iduser)->name}}</a></td>
-									<td>{{getUserById($list->iduser)->email}}</td>
-									<td>
-										@if(getSlotTugasBidang(getUserById($list->iduser)->id,$bidang->id))
-										<a class="btn btn-success">Download Now</a>
-										@else
-										<a class="btn btn-danger">Not Uploaded</a>
-										@endif
+								@if(!$isLowlyUser)
+									@foreach($pendaftarBidang as $list)
+									<tr>
+										<td>{{$i}}</td>
+										<td><a href="{{url('/view/user/'.$list->iduser)}}">{{getUserById($list->iduser)->name}}</a></td>
+										<td>{{getUserById($list->iduser)->email}}</td>
+										<td>
+											<?php $tugasBdg = getSlotTugasBidang(getUserById($list->iduser)->id,$bidang->id); ?>
+											@if($tugasBdg)
+											<a class="btn btn-success" href="{{url().'/file-server/slot-tugas-bidang/'.$tugasBdg->link_tugas}}">Download Now</a>
+											@else
+											<a class="btn btn-danger" disabled="disabled">Not Uploaded</a>
+											@endif
 
-									</td>
-									<td>
-										@if(getSlotTugasUmum(getUserById($list->iduser)->id,$idoprec))
-										<a class="btn btn-success">Download Now</a>
-										@else
-										<a class="btn btn-danger">Not Uploaded</a>
-										@endif
+										</td>
+										<td>
+											<?php $tugasUmum = getSlotTugasUmum(getUserById($list->iduser)->id,$idoprec); ?>
+											@if($tugasUmum)
+											<a class="btn btn-success" href="{{url().'/file-server/slot-tugas-umum/'.$tugasUmum->link_tugas}}">Download Now</a>
+											@else
+											<a class="btn btn-danger" disabled="disabled">Not Uploaded</a>
+											@endif
 
-									</td>
-									<?php $i++ ?>
-								</tr>
-								@endforeach
+										</td>
+										<?php $i++ ?>
+									</tr>
+									@endforeach
+								@else
+									@foreach($pendaftarBidang as $list)
+									<tr>
+										<td>{{$i}}</td>
+										<td>{{getUserById($list->iduser)->name}}</td>
+										<?php $i++ ?>
+									</tr>
+									@endforeach
+								@endif
 							</tbody>
 						</table>
 						@else
