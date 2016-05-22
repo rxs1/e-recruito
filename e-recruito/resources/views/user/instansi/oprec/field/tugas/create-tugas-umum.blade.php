@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
 
 	<div class="container">
-		<div class="col-md-10 col-md-offset-1" style="border: 2px solid #eee ; margin-top:7%">
+		<div class="col-md-10 col-md-offset-1 instance" style="border: 2px solid #eee ; margin-top:7%">
 
 			<h3>Common Task "<?php echo $oprec['name']; ?>" </h3>
 			{!! Form::model(new App\TugasUmum, ['route'=>['tugas-umum.store'],'files'=>true]) !!}

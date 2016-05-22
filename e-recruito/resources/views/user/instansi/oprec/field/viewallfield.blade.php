@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
@@ -24,7 +24,7 @@
 
 			@if(count($allField))
 			@foreach($allField as $list)
-			<div class="col-md-12" style="border: solid #eee 3px">
+			<div class="col-md-12 instance oprec" style="border: solid #eee 3px">
 				<h3>{{$list->name}} </h3>
 				<hr>
 				

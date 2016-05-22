@@ -31,18 +31,15 @@
 						{!! Form::label('name','Fullname', ['class'=>'col-md-4 control-label']) !!}
 
 						{!! Form::text('name',null,array('class'=>' form-control','placeholder'=>'Enter your fullname')) !!}
-
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('email','Email', ['class'=>'col-md-4 control-label']) !!}
 						{!! Form::text('email',null,array('class'=>'email form-control','placeholder'=>'Enter your email, example: xyz@example.com')) !!}
-
 					</div>
 
 					<div class="form-group ">
 						{!! Form::label('password','Password', ['class'=>'col-md-4 control-label']) !!}
-
 						{!! Form::password('password', array('class'=>'pass form-control','placeholder'=>'Enter your password')) !!}
 
 					</div>

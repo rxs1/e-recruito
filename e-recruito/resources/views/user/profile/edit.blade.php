@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance)
 </head>
 <body>
 	@include('nav')
 	<div class="container-fluid">
-		<div class="container">
+		<div class="container instance">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 

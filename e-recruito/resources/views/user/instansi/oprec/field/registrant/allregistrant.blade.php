@@ -26,7 +26,7 @@
 
 		?>
 
-		@include('head')
+		@include('user.instansi.headmyinstance')
 	</head>
 	<body>
 		@include('nav')
@@ -40,7 +40,7 @@
 					<div class="col-md-12 pull-right" style="margin: 1%">
 						<a  class="btn btn-warning " onClick='history.go(-1);' >BACK</a>
 					</div>
-					<div class="col-md-8 col-md-offset-2" style="padding:7%">
+					<div class="col-md-8 col-md-offset-2 instance" style="padding:7%">
 						@if(count($pendaftarBidang))
 						<table class="table table-bordered text-center">
 							<thead>

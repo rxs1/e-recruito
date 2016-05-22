@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
@@ -30,7 +30,8 @@
 			@if(count($allOprec))
 			@foreach($allOprec as $list)
 			@if($list->statuspublis)
-			<div class="col-md-12" style="border: solid #eee 3px;margin-bottom: 3%">
+
+			<div class="col-md-12 instance oprec">
 				<h3>{{$list->name}} <a href="{{url('/oprec/edit/'.$list->id)}}" class="text-warning"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> EDIT</a></h3>
 				<hr>
 				
@@ -74,7 +75,7 @@
 				</div>
 			</div>
 			@else
-			<div class="col-md-12" style="border: solid #eee 3px;margin-bottom: 3%">
+			<div class="col-md-12 instance oprec">
 				<h3>{{$list->name}}</h3>
 				<hr>
 

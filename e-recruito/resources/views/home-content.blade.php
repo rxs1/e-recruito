@@ -16,7 +16,6 @@
 				<div class="col-md-8 col-md-offset-2">
 					<p><a href="{{url('/signup')}}" class="btn btn-lg btn-primary mybut">SIGN UP</a></p>
 				</div>
-				<!-- csauyg -->
 			</center>
 		</div>
 	</div>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
 	<div class="container" style="margin-top: 5%">
-		<div class="col-md-12">
+		<div class="col-md-12 instance">
 			<h2>{{$title}}</h2>
 			<hr>
 			<div class="col-md-6">

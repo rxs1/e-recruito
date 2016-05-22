@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
@@ -19,7 +19,7 @@
 			@endif
 		</div>
 		@foreach($myinstansi as $list)
-		<div class="col-md-12">
+		<div class="col-md-12 instance">
 
 			<div class="col-md-3">
 				<img height="200" width="200" src="{{url().'/public/assets/img/logo-instansi/'.$list['foto']}}">

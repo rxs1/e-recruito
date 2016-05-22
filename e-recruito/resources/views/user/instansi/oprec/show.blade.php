@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('head')
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
 	<div class="container" style="border: solid #eee 3px">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 instance">
 				<h3>{{$title}}</h3>
 				<hr>
 				<div class="col-md-3">
