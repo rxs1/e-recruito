@@ -127,4 +127,9 @@ class TugasUmumController extends Controller {
 		//
 	}
 
+	public function getDownloadCommonTask($file) {
+		$file_download = url().'/file-server/slot-tugas-umum/'.$file;
+		return Response::download($file_download);
+	}
+
 }

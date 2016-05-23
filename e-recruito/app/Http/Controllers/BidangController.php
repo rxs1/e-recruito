@@ -144,11 +144,17 @@ class BidangController extends Controller {
 	public function viewAllRegistrant($idinstansi,$idoprec,$idfield)
 	{
 		if(session()->get('isLogin')){
+			$user = session()->get('isLogin');
 			$instansi = Instansi::where('id',$idinstansi)->first();
 			$oprec = Oprec::where('id',$idoprec)->first();
 			$bidang = Bidang::where('id',$idfield)->first();
 			$pendaftarBidang = PendaftarBidang::where('idbidang',$idfield)->get();
-			return view('user.instansi.oprec.field.registrant.allregistrant',['title'=>'Registrant :'.$instansi->name.'>'.$oprec->name.'>'.$bidang->name,'bidang'=>$bidang,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec,'pendaftarBidang'=>$pendaftarBidang ]);
+			if ($user->id == $instansi->iduser) {
+				return view('user.instansi.oprec.field.registrant.allregistrant',['title'=>'Registrant :'.$instansi->name.'>'.$oprec->name.'>'.$bidang->name,'bidang'=>$bidang,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec,'pendaftarBidang'=>$pendaftarBidang,'isLowlyUser'=>false]);
+			} else {
+				return view('user.instansi.oprec.field.registrant.allregistrant',['title'=>'Registrant :'.$instansi->name.'>'.$oprec->name.'>'.$bidang->name,'bidang'=>$bidang,'idinstansi'=>$idinstansi,'idoprec'=>$idoprec,'pendaftarBidang'=>$pendaftarBidang,'isLowlyUser'=>true]);
+			}
+			
 		}else{
 			$title='E-recruito Login';
 			return Redirect::to('/login')->with('title',$title);

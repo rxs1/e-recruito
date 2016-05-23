@@ -5,6 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 class SlotTugasUmum extends Model {
 
 	protected $table = 'slot-tugas-umum';
-	protected $fillable = ['idbidang','link-tugas','idtugasumum'];
+	protected $fillable = ['iduser','link_tugas','idoprec'];
 
 }

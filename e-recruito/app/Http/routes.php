@@ -53,7 +53,10 @@ Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/allr
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/create-common-task', 'TugasUmumController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/field/{idfield}/create-field-task', 'TugasBidangController@create');
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
-Route::post('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@userTask');
+Route::post('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/yourTask', 'TugasController@uploadUserTask');
+
+Route::get('/file-server/slot-tugas-umum/{file}', 'TugasUmumController@getDownloadCommonTask');
+Route::get('/file-server/slot-tugas-bidang/{file}', 'TugasBidangController@getDownloadFieldTask');
 
 /*Choose field*/
 Route::get('/pengguna/instansi/{idinstansi}/oprec/{idoprec}/choose-field', 'PendaftarBidangController@chooseField');
