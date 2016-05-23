@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('user.instansi.headmyinstance)
+	@include('user.instansi.headmyinstance')
 </head>
 <body>
 	@include('nav')
