@@ -15,7 +15,7 @@ function hasJoined($idoprec) {
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-12">
-					<h2>Latest Open Recruitment</h2>
+					<h2>Newest Open Recruitment</h2>
 					<hr>
 				</div>
 				<div class="col-md-12" style="padding:3%">
@@ -37,7 +37,7 @@ function hasJoined($idoprec) {
 				@if(count($allOprec))
 				@foreach($allOprec as $list)
 				@if(!hasJoined($list['id']))
-				<div class="col-md-4" style="margin-bottom: 3%">
+				<div class="col-md-4 oprec" style="margin-bottom: 3%">
 					<img src="{{url('public/assets/img/brosur-oprec/'.$list['brosur'])}}" height="200" width="100%">
 					<h3>{{$list['name']}}</h3>
 					<p></p>
