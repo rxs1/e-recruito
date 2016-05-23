@@ -3,7 +3,7 @@
 <head>
 	@include('head')
 	<?php $not_yet = true;
-		$not_yet2 = true; ?>
+	$not_yet2 = true; ?>
 	<?php
 	function getTugasBidang($idbidang) {
 		$tugasBidang = App\TugasBidang::where('idbidang',$idbidang)->first();
@@ -26,21 +26,21 @@
 			
 		</div>
 		@foreach($errors->all() as $error)
-			<?php $msg = 'At least one field is required';
-				if ($error == $msg) {
-					if ($not_yet) {
-						$not_yet = false;
-						echo '<span class="alert alert-danger">'.$error.'</span>';
-					}
-				} else {
-					if ($not_yet2) {
-						$not_yet2 = false;
-						echo '<span class="alert alert-danger">'.$error.'</span>';
-					}
-				} ?>
+		<?php $msg = 'At least one field is required';
+		if ($error == $msg) {
+			if ($not_yet) {
+				$not_yet = false;
+				echo '<span class="alert alert-danger">'.$error.'</span>';
+			}
+		} else {
+			if ($not_yet2) {
+				$not_yet2 = false;
+				echo '<span class="alert alert-danger">'.$error.'</span>';
+			}
+		} ?>
 		@endforeach
 		@if(session()->get('uploaded') == '1')
-			<span class="alert alert-success">File has been saved</span>
+		<span class="alert alert-success">File has been saved</span>
 		@endif
 		
 		{!!Form::open(array('action'=>'TugasController@uploadUserTask','files'=>true))!!}
@@ -91,6 +91,7 @@
 		</div>
 
 	</div>
+
 	{!! Form::close() !!}
 </div>
 @include('footer')

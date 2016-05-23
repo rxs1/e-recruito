@@ -102,7 +102,7 @@ class TugasController extends Controller {
 			$tugasBidang = DB::table('tugas-bidang')
 			->join('pendaftar-bidang', function($join)
 			{
-				$join->on('tugas-bidang.id', '=', 'pendaftar-bidang.idbidang');
+				$join->on('tugas-bidang.idbidang', '=', 'pendaftar-bidang.idbidang');
 			})->join('bidang',function($join)
 			{
 				$join->on('bidang.id', '=', 'pendaftar-bidang.idbidang');
@@ -126,7 +126,7 @@ class TugasController extends Controller {
 			$tugasBidang = DB::table('tugas-bidang')
 			->join('pendaftar-bidang', function($join)
 			{
-				$join->on('tugas-bidang.id', '=', 'pendaftar-bidang.idbidang');
+				$join->on('tugas-bidang.idbidang', '=', 'pendaftar-bidang.idbidang');
 			})->join('bidang',function($join)
 			{
 				$join->on('bidang.id', '=', 'pendaftar-bidang.idbidang');
@@ -180,7 +180,7 @@ class TugasController extends Controller {
 							'idoprec' => $input['idoprec'],
 							'iduser' => $user->id,
 							'link_tugas' => $filename
-						]);
+							]);
 					}
 				}
 
@@ -205,7 +205,7 @@ class TugasController extends Controller {
 								'iduser' => $user->id,
 								'link_tugas' => $filename,
 								'idbidang' => $idbdg
-							]);
+								]);
 						}
 					}
 				}
