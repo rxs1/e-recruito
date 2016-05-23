@@ -102,12 +102,12 @@ class TugasController extends Controller {
 			$tugasBidang = DB::table('tugas-bidang')
 			->join('pendaftar-bidang', function($join)
 			{
-				$join->on('tugas-bidang.id', '=', 'pendaftar-bidang.idbidang');
+				$join->on('tugas-bidang.idbidang', '=', 'pendaftar-bidang.idbidang');
 			})->join('bidang',function($join)
 			{
 				$join->on('bidang.id', '=', 'pendaftar-bidang.idbidang');
 			}) 
-			->where('iduser',$user->id)->get();
+			->where('iduser',$user->id)->where('tugas-bidang.idoprec',$idoprec)->get();
 
 			$title = 'Upload Document Task '.$oprec->name; 
 
@@ -126,12 +126,12 @@ class TugasController extends Controller {
 			$tugasBidang = DB::table('tugas-bidang')
 			->join('pendaftar-bidang', function($join)
 			{
-				$join->on('tugas-bidang.id', '=', 'pendaftar-bidang.idbidang');
+				$join->on('tugas-bidang.idbidang', '=', 'pendaftar-bidang.idbidang');
 			})->join('bidang',function($join)
 			{
 				$join->on('bidang.id', '=', 'pendaftar-bidang.idbidang');
 			}) 
-			->where('iduser',$user->id)->get();
+			->where('iduser',$user->id)->where('tugas-bidang.idoprec',$idoprec)->get();
 
 			$str = '';
 			foreach($tugasBidang as $tgs) {
