@@ -18,6 +18,7 @@ function hasJoined($idoprec) {
 					<h2>Newest Open Recruitment</h2>
 					<hr>
 				</div>
+				
 				<div class="col-md-12" style="padding:3%">
 					{!!Form::open(array('action'=>'OprecController@search','files'=>true))!!}
 					<div class="col-md-12">
@@ -34,6 +35,8 @@ function hasJoined($idoprec) {
 					{!! Form::close() !!}
 					
 				</div>
+
+
 				@if(count($allOprec))
 				@foreach($allOprec as $list)
 				@if(!hasJoined($list['id']))

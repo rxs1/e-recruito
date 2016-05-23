@@ -49,8 +49,8 @@ function checkAnyJoinedOprec($id) {
 				@else <!-- Kala user admin-->
 				<li ><a href="{{url('/pengguna')}}">Home</a></li>
 				<li><a href="{{url('/user')}}">User Management</a></li>
-				<li><a href="{{url('/instansi')}}">Intance Management</a></li>
-				<li><a href="{{url('/FAQ')}}">FAQ</a></li>
+				<li><a href="{{url('/instansi')}}">Instance Management</a></li>
+				<!-- <li><a href="{{url('/FAQ')}}">FAQ</a></li> -->
 				@endif
 
 			</ul>

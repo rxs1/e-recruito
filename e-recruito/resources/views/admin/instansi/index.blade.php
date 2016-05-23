@@ -20,7 +20,7 @@
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request Instance</a></li>
 			<li role="presentation"><a href="#ignored" aria-controls="ignored" role="tab" data-toggle="tab">Ignored Instance</a></li>
-			<li role="presentation"><a href="#active" aria-controls="active" role="tab" data-toggle="tab">Active Inctance</a></li>
+			<li role="presentation"><a href="#active" aria-controls="active" role="tab" data-toggle="tab">Active Instance</a></li>
 
 		</ul>
 
