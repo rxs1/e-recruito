@@ -131,7 +131,7 @@ class TugasController extends Controller {
 			{
 				$join->on('bidang.id', '=', 'pendaftar-bidang.idbidang');
 			}) 
-			->where('iduser',$user->id)->where('tugas-bidang.idoprec',$idoprec)->get();
+			->where('iduser',$user->id)->where('tugas-bidang.idoprec',$input['idoprec'])->get();
 
 			$str = '';
 			foreach($tugasBidang as $tgs) {
