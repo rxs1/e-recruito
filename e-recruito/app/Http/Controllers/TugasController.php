@@ -180,7 +180,7 @@ class TugasController extends Controller {
 							'idoprec' => $input['idoprec'],
 							'iduser' => $user->id,
 							'link_tugas' => $filename
-						]);
+							]);
 					}
 				}
 
@@ -205,7 +205,7 @@ class TugasController extends Controller {
 								'iduser' => $user->id,
 								'link_tugas' => $filename,
 								'idbidang' => $idbdg
-							]);
+								]);
 						}
 					}
 				}
